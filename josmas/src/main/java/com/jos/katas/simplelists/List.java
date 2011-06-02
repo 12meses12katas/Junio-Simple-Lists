@@ -19,11 +19,27 @@ public class List {
 	}
 	
 	public void add(String value) {
+		//TODO this is going to break if we go over 10 items
 		if (value != null && !value.equals("")){
 			ListItem newItem = new ListItem();
 			newItem.value = value; // I can access ListItem.value even if it is private???
 			listItems[currentHead] = newItem;
 			++currentHead;
+		}
+	}
+
+	public void delete(ListItem item) {
+		if (item != null && find(item.getValue()) != null){
+			for (int i = 0; i < currentHead; i++) {
+				if (listItems[i].getValue() == item.getValue()){
+					for (int j = i; j < currentHead; j++) {
+						listItems[j] = listItems[j+1];
+					}
+					listItems[currentHead] = null;
+					--currentHead;
+					break;
+				}
+			}
 		}
 	}
 	
@@ -66,6 +82,4 @@ public class List {
 		}
 		
 	}
-
-
 }

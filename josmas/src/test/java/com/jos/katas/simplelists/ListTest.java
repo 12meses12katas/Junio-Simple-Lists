@@ -48,5 +48,21 @@ public class ListTest {
 	    list.add("betty");
 	    list.add("barney");
 	    assertArrayEquals(new String[] {"fred", "wilma", "betty", "barney"}, list.values());
-	}	
+	}
+	
+	@Test
+	public void itShouldDeleteOneValue() {
+		list.add("fred");
+	    list.add("wilma");
+	    list.add("betty");
+	    list.add("barney");
+		list.delete(list.find("wilma"));
+	    assertArrayEquals(new String[] {"fred", "betty", "barney"}, list.values());
+	    list.delete(list.find("barney"));
+	    assertArrayEquals(new String[] {"fred", "betty"}, list.values());
+	    list.delete(list.find("fred"));
+	    assertArrayEquals(new String[] {"betty"}, list.values());
+	    list.delete(list.find("betty"));
+	    assertArrayEquals(new String[] {}, list.values());
+	}
 }
