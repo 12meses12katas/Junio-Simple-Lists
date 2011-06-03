@@ -29,3 +29,10 @@ class SList(object):
         else:
             return [self._value] + self._next.values()
 
+    def delete(self, node):
+        if node == self:
+            self._value = self._next._value
+            self._next = self._next._next
+        else:
+            self._next.delete(node)
+
