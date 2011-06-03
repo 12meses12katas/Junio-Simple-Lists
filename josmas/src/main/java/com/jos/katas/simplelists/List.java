@@ -2,40 +2,40 @@ package com.jos.katas.simplelists;
 
 public class List {
 	
-	ListItem listItems [] = new ListItem[10]; // Initial size of 10
+	Element elementsList [] = new Element[10]; // Initial size of 10
 	int currentHead = 0;
 
 	public List() {
-		for (int i = 0; i < listItems.length; i++) {
-			listItems[i] = null;
+		for (int i = 0; i < elementsList.length; i++) {
+			elementsList[i] = null;
 		}
 	}
-	public ListItem find(String string) {
-		for (int i = 0; i < listItems.length; i++) {
-			if (listItems[i] != null && listItems[i].value.equals(string))
-				return listItems[i];
+	public Element find(String string) {
+		for (int i = 0; i < elementsList.length; i++) {
+			if (elementsList[i] != null && elementsList[i].value.equals(string))
+				return elementsList[i];
 		}
 		return null;
 	}
 	
 	public void add(String value) {
-		//TODO this is going to break if we go over 10 items
+		//TODO this is going to break if we go over 10 elements
 		if (value != null && !value.equals("")){
-			ListItem newItem = new ListItem();
-			newItem.value = value; // I can access ListItem.value even if it is private???
-			listItems[currentHead] = newItem;
+			Element newElement = new Element();
+			newElement.value = value; // I can access Element.value even if it is private???
+			elementsList[currentHead] = newElement;
 			++currentHead;
 		}
 	}
 
-	public void delete(ListItem item) {
-		if (item != null && find(item.getValue()) != null){
+	public void delete(Element element) {
+		if (element != null && find(element.getValue()) != null){
 			for (int i = 0; i < currentHead; i++) {
-				if (listItems[i].getValue() == item.getValue()){
+				if (elementsList[i].getValue() == element.getValue()){
 					for (int j = i; j < currentHead; j++) {
-						listItems[j] = listItems[j+1];
+						elementsList[j] = elementsList[j+1];
 					}
-					listItems[currentHead] = null;
+					elementsList[currentHead] = null;
 					--currentHead;
 					break;
 				}
@@ -43,29 +43,29 @@ public class List {
 		}
 	}
 	
-	public String value(ListItem item) {
-		if (item != null)
-			return item.value();
+	public String value(Element element) {
+		if (element != null)
+			return element.value();
 		return null;
 	}
 	
 	public String [] values() {
-		if (listItems.length == 0)
+		if (elementsList.length == 0)
 			return new String[] {};
 		
 		String[] theValues = new String[currentHead];
 		for (int i = 0; i < currentHead; i++) {
-			theValues[i] = listItems[i].getValue();
+			theValues[i] = elementsList[i].getValue();
 		}
 		return theValues;
 	}
 	
 	/**
-	 * Inner class ListItem
+	 * Inner class Element
 	 * @author jos
 	 *
 	 */
-	private class ListItem{
+	private class Element{
 		
 		private String value;
 		
