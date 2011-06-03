@@ -11,16 +11,21 @@ class SList(object):
     def find(self, value):
         if self._value == value:
             return self
-        elif self._next:
-            return self._next.find(value)
-        else:
+        elif self._value is None:
             return None
+        else:
+            return self._next.find(value)
 
     def add(self, value):
         if self._value == None:
             self._value = value
-        elif self._next == None:
             self._next = SList()
-            self._next._value = value 
-        
+        else:
+            self._next.add(value)
+
+    def values(self):
+        if self._value is None:
+            return []
+        else:
+            return [self._value] + self._next.values()
 
