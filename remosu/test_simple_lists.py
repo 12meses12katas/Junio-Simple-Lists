@@ -3,15 +3,15 @@ from simple_lists import SList
 
 
 def test_simple_list():    
-    slist = SList() #list = List.new
-    assert slist.find("fred") == None #assert_nil(list.find("fred"))
+    slist = SList() 
+    assert slist.find("fred") == None 
     slist.add("fred")
     assert "fred" == slist.find("fred").value()
-    assert slist.find("wilma") == None #assert_nil(list.find("wilma"))
-    slist.add("wildma") #list.add("wilma")
-    assert "fred" == slist.find("fred").value() #assert_equal("fred",  list.find("fred").value())
-    assert "wildma" == slist.find("wildma").value()   #assert_equal("wilma", list.find("wilma").value())
-    #assert_equal(["fred", "wilma"], list.values())
+    assert slist.find("wilma") == None 
+    slist.add("wildma") 
+    assert "fred" == slist.find("fred").value()
+    assert "wildma" == slist.find("wildma").value()
+    assert ["fred", "wildma"] == slist.values()
 
     #list = List.new
     #list.add("fred")
