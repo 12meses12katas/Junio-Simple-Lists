@@ -13,12 +13,12 @@ def test_simple_list():
     assert "wildma" == slist.find("wildma").value()
     assert ["fred", "wildma"] == slist.values()
 
-    #list = List.new
-    #list.add("fred")
-    #list.add("wilma")
-    #list.add("betty")
-    #list.add("barney")
-    #assert_equal(["fred", "wilma", "betty", "barney"], list.values())
+    slist = SList()
+    slist.add("fred")
+    slist.add("wilma")
+    slist.add("betty")
+    slist.add("barney")
+    assert ["fred", "wilma", "betty", "barney"] == slist.values()
     #list.delete(list.find("wilma"))
     #assert_equal(["fred", "betty", "barney"], list.values())
     #list.delete(list.find("barney"))
