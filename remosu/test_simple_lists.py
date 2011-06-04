@@ -1,5 +1,5 @@
 
-from simple_lists import SList
+from simple_lists import SList, DList
 
 
 def test_simple_list():    
@@ -28,3 +28,31 @@ def test_simple_list():
     assert ["betty"] == slist.values()
     slist.delete(slist.find("betty"))
     assert [] == slist.values()
+
+
+def test_double_linked_list():    
+    dlist = DList() 
+    assert dlist.find("fred") == None 
+    dlist.add("fred")
+    assert "fred" == dlist.find("fred").value()
+    assert dlist.find("wilma") == None 
+    dlist.add("wildma") 
+    assert "fred" == dlist.find("fred").value()
+    assert "wildma" == dlist.find("wildma").value()
+    assert ["fred", "wildma"] == dlist.values()
+
+    #dlist = DList()
+    #dlist.add("fred")
+    #dlist.add("wilma")
+    #dlist.add("betty")
+    #dlist.add("barney")
+    #assert ["fred", "wilma", "betty", "barney"] == dlist.values()
+    #dlist.delete(dlist.find("wilma"))
+    #print dlist.values()
+    #assert ["fred", "betty", "barney"] == dlist.values()
+    #dlist.delete(dlist.find("barney"))
+    #assert ["fred", "betty"] == dlist.values()
+    #dlist.delete(dlist.find("fred"))
+    #assert ["betty"] == dlist.values()
+    #dlist.delete(dlist.find("betty"))
+    #assert [] == dlist.values()
