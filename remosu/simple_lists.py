@@ -49,3 +49,12 @@ class DList(SList):
             self._next._prev = self
         else:
             self._next.add(value)
+
+    def delete(self, node):
+        if node == self:
+            self._value = self._next._value
+            self._next = self._next._next
+            if self._next:
+                self._next._prev = self
+        else:
+            self._next.delete(node)

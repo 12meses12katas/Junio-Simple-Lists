@@ -41,18 +41,30 @@ def test_double_linked_list():
     assert "wildma" == dlist.find("wildma").value()
     assert ["fred", "wildma"] == dlist.values()
 
-    #dlist = DList()
-    #dlist.add("fred")
-    #dlist.add("wilma")
-    #dlist.add("betty")
-    #dlist.add("barney")
-    #assert ["fred", "wilma", "betty", "barney"] == dlist.values()
-    #dlist.delete(dlist.find("wilma"))
+    dlist = DList()
+    dlist.add("fred")
+    dlist.add("wilma")
+    dlist.add("betty")
+    dlist.add("barney")
+    assert ["fred", "wilma", "betty", "barney"] == dlist.values()
+    dlist.delete(dlist.find("wilma"))
     #print dlist.values()
-    #assert ["fred", "betty", "barney"] == dlist.values()
-    #dlist.delete(dlist.find("barney"))
-    #assert ["fred", "betty"] == dlist.values()
-    #dlist.delete(dlist.find("fred"))
-    #assert ["betty"] == dlist.values()
-    #dlist.delete(dlist.find("betty"))
-    #assert [] == dlist.values()
+    assert ["fred", "betty", "barney"] == dlist.values()
+    dlist.delete(dlist.find("barney"))
+    assert ["fred", "betty"] == dlist.values()
+    dlist.delete(dlist.find("fred"))
+    assert ["betty"] == dlist.values()
+    dlist.delete(dlist.find("betty"))
+    assert [] == dlist.values()
+
+    dlist.add("pepe")
+    dlist.add("cuco")
+    assert dlist._next._prev == dlist
+    dlist.add("paco")
+    assert dlist.find("cuco")._prev.value() == "pepe"
+    assert dlist.find("cuco")._next.value() == "paco"
+    
+    dlist.delete(dlist.find("cuco"))
+    assert dlist.find("cuco") is None
+    assert dlist.find("paco")._prev.value() == "pepe"
+
