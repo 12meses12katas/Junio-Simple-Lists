@@ -36,3 +36,16 @@ class SList(object):
         else:
             self._next.delete(node)
 
+class DList(SList):
+    def __init__(self):
+        self._value = None
+        self._next = None
+        self._prev = None 
+
+    def add(self, value):
+        if self._value == None:
+            self._value = value
+            self._next = DList()
+            self._next._prev = self
+        else:
+            self._next.add(value)
