@@ -29,9 +29,9 @@ public class List {
 	}
 
 	public void delete(Element element) {
-		if (element != null && find(element.getValue()) != null){
+		if (element != null && find(element.value) != null){
 			for (int i = 0; i < currentHead; i++) {
-				if (elementsList[i].getValue() == element.getValue()){
+				if (elementsList[i].value == element.value){
 					for (int j = i; j < currentHead; j++) {
 						elementsList[j] = elementsList[j+1];
 					}
@@ -45,7 +45,7 @@ public class List {
 	
 	public String value(Element element) {
 		if (element != null)
-			return element.value();
+			return element.value;
 		return null;
 	}
 	
@@ -55,7 +55,7 @@ public class List {
 		
 		String[] theValues = new String[currentHead];
 		for (int i = 0; i < currentHead; i++) {
-			theValues[i] = elementsList[i].getValue();
+			theValues[i] = elementsList[i].value;
 		}
 		return theValues;
 	}
@@ -69,17 +69,8 @@ public class List {
 		
 		private String value;
 		
-		public String getValue() {
-			return value;
-		}
-
 		public void setValue(String value) { //TODO not use cause inserting directly into value from hosting class -- look into this!
 			this.value = value;
 		}
-
-		public String value() {
-			return this.value;
-		}
-		
 	}
 }
