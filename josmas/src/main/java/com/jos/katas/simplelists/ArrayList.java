@@ -86,11 +86,6 @@ public class ArrayList implements List {
 	 *
 	 */
 	class Element{
-		
 		private String value;
-		
-		public void setValue(String value) { //TODO not use cause inserting directly into value from hosting class -- look into this!
-			this.value = value;
-		}
 	}
 }
