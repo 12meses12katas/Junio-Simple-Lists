@@ -6,13 +6,13 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-public class ListTest {
+public class ArrayListTest {
 	
-	List list;
+	ArrayList list;
 	
 	@Before
 	public void setUp() throws Exception {
-		list = new List();
+		list = new ArrayList();
 	}
 	
 	@Test
