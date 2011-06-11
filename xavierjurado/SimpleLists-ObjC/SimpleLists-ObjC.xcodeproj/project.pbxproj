@@ -40,6 +40,8 @@
 		4743FAB613A415DB00657D3B /* SimpleLists-UnitTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimpleLists-UnitTest-Prefix.pch"; sourceTree = "<group>"; };
 		4743FAB713A415DB00657D3B /* SimpleLists_UnitTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleLists_UnitTest.h; sourceTree = "<group>"; };
 		4743FAB913A415DB00657D3B /* SimpleLists_UnitTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleLists_UnitTest.m; sourceTree = "<group>"; };
+		4743FABF13A41C5C00657D3B /* List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = List.h; sourceTree = "<group>"; };
+		4743FAC013A41C6500657D3B /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,8 @@
 			children = (
 				4743FA9A13A414FA00657D3B /* main.m */,
 				4743FA9C13A414FA00657D3B /* Supporting Files */,
+				4743FABF13A41C5C00657D3B /* List.h */,
+				4743FAC013A41C6500657D3B /* Node.h */,
 			);
 			path = "SimpleLists-ObjC";
 			sourceTree = "<group>";
