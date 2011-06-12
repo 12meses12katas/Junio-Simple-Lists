@@ -60,10 +60,10 @@
    
    list = [[SingleLinkedList alloc] init];
    STAssertNil([list nodeWithString:@"fred"], nil);
-   [list add:[SingleLinkedNode nodeWithValue:@"fred"]];
+   [list add:[SingleLinkedNode nodeWithString:@"fred"]];
    STAssertEqualObjects(@"fred", [list nodeWithString:@"fred"].value, nil);
    STAssertNil([list nodeWithString:@"wilma"], nil);
-   [list add:[SingleLinkedNode nodeWithValue:@"wilma"]];
+   [list add:[SingleLinkedNode nodeWithString:@"wilma"]];
    STAssertEqualObjects(@"fred", [list nodeWithString:@"fred"].value, nil);
    STAssertEqualObjects(@"wilma", [list nodeWithString:@"wilma"].value, nil);
    array = [NSArray arrayWithObjects:@"fred", @"wilma", nil];
@@ -72,10 +72,10 @@
    [list release];
    
    list = [[SingleLinkedList alloc] init];
-   [list add:[SingleLinkedNode nodeWithValue:@"fred"]];
-   [list add:[SingleLinkedNode nodeWithValue:@"wilma"]];
-   [list add:[SingleLinkedNode nodeWithValue:@"betty"]];
-   [list add:[SingleLinkedNode nodeWithValue:@"barney"]];
+   [list add:[SingleLinkedNode nodeWithString:@"fred"]];
+   [list add:[SingleLinkedNode nodeWithString:@"wilma"]];
+   [list add:[SingleLinkedNode nodeWithString:@"betty"]];
+   [list add:[SingleLinkedNode nodeWithString:@"barney"]];
    array = [NSArray arrayWithObjects:@"fred", @"wilma", @"betty", @"barney", nil];
    STAssertEqualObjects(array, [list values], nil);
    [list remove:[list nodeWithString:@"wilma"]];

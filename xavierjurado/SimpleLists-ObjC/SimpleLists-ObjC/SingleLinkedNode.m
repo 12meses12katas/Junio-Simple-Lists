@@ -24,7 +24,7 @@
    return self;
 }
 
-- (id)initWithValue:(NSString *)aValue
+- (id)initWithString:(NSString *)aValue
 {
    self = [super init];
    if (self) 
@@ -45,9 +45,9 @@
    [super dealloc];
 }
 
-+ (id)nodeWithValue:(NSString *)value
++ (id)nodeWithString:(NSString *)value
 {
-   SingleLinkedNode *node = [[SingleLinkedNode alloc] initWithValue:value];
+   SingleLinkedNode *node = [[SingleLinkedNode alloc] initWithString:value];
    return [node autorelease];
 }
 

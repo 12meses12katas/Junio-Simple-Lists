@@ -15,7 +15,7 @@
 @property (nonatomic, retain) SingleLinkedNode *nextNode;
 
 - (id)init;
-- (id)initWithValue:(NSString *)value;
-+ (id)nodeWithValue:(NSString *)value;
+- (id)initWithString:(NSString *)value;
++ (id)nodeWithString:(NSString *)value;
 
 @end
