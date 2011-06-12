@@ -12,6 +12,10 @@
 		4743FAAB13A415DB00657D3B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4743FAAA13A415DB00657D3B /* Cocoa.framework */; };
 		4743FAB813A415DB00657D3B /* SimpleLists_UnitTest.h in Resources */ = {isa = PBXBuildFile; fileRef = 4743FAB713A415DB00657D3B /* SimpleLists_UnitTest.h */; };
 		4743FABA13A415DB00657D3B /* SimpleLists_UnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4743FAB913A415DB00657D3B /* SimpleLists_UnitTest.m */; };
+		4743FAC713A4211F00657D3B /* SingleLinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4743FAC613A4211F00657D3B /* SingleLinkedList.m */; };
+		4743FAC813A4211F00657D3B /* SingleLinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4743FAC613A4211F00657D3B /* SingleLinkedList.m */; };
+		4743FACB13A421A900657D3B /* SingleLinkedNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4743FACA13A421A900657D3B /* SingleLinkedNode.m */; };
+		4743FACC13A421A900657D3B /* SingleLinkedNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4743FACA13A421A900657D3B /* SingleLinkedNode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,6 +46,10 @@
 		4743FAB913A415DB00657D3B /* SimpleLists_UnitTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleLists_UnitTest.m; sourceTree = "<group>"; };
 		4743FABF13A41C5C00657D3B /* List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = List.h; sourceTree = "<group>"; };
 		4743FAC013A41C6500657D3B /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
+		4743FAC513A4211F00657D3B /* SingleLinkedList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleLinkedList.h; sourceTree = "<group>"; };
+		4743FAC613A4211F00657D3B /* SingleLinkedList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleLinkedList.m; sourceTree = "<group>"; };
+		4743FAC913A421A900657D3B /* SingleLinkedNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleLinkedNode.h; sourceTree = "<group>"; };
+		4743FACA13A421A900657D3B /* SingleLinkedNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleLinkedNode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,10 +104,14 @@
 		4743FA9913A414FA00657D3B /* SimpleLists-ObjC */ = {
 			isa = PBXGroup;
 			children = (
-				4743FA9A13A414FA00657D3B /* main.m */,
-				4743FA9C13A414FA00657D3B /* Supporting Files */,
 				4743FABF13A41C5C00657D3B /* List.h */,
 				4743FAC013A41C6500657D3B /* Node.h */,
+				4743FA9A13A414FA00657D3B /* main.m */,
+				4743FAC513A4211F00657D3B /* SingleLinkedList.h */,
+				4743FAC613A4211F00657D3B /* SingleLinkedList.m */,
+				4743FAC913A421A900657D3B /* SingleLinkedNode.h */,
+				4743FACA13A421A900657D3B /* SingleLinkedNode.m */,
+				4743FA9C13A414FA00657D3B /* Supporting Files */,
 			);
 			path = "SimpleLists-ObjC";
 			sourceTree = "<group>";
@@ -238,6 +250,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4743FA9B13A414FA00657D3B /* main.m in Sources */,
+				4743FAC713A4211F00657D3B /* SingleLinkedList.m in Sources */,
+				4743FACB13A421A900657D3B /* SingleLinkedNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +260,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4743FABA13A415DB00657D3B /* SimpleLists_UnitTest.m in Sources */,
+				4743FAC813A4211F00657D3B /* SingleLinkedList.m in Sources */,
+				4743FACC13A421A900657D3B /* SingleLinkedNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
