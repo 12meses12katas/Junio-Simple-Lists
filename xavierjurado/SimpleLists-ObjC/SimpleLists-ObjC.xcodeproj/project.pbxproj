@@ -16,6 +16,10 @@
 		4743FAC813A4211F00657D3B /* SingleLinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4743FAC613A4211F00657D3B /* SingleLinkedList.m */; };
 		4743FACB13A421A900657D3B /* SingleLinkedNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4743FACA13A421A900657D3B /* SingleLinkedNode.m */; };
 		4743FACC13A421A900657D3B /* SingleLinkedNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4743FACA13A421A900657D3B /* SingleLinkedNode.m */; };
+		4743FAE713A5086200657D3B /* DoubleLinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4743FAE613A5086200657D3B /* DoubleLinkedList.m */; };
+		4743FAE813A5086200657D3B /* DoubleLinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4743FAE613A5086200657D3B /* DoubleLinkedList.m */; };
+		4743FAEE13A508AE00657D3B /* DoubleLinkedNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4743FAED13A508AE00657D3B /* DoubleLinkedNode.m */; };
+		4743FAEF13A508AE00657D3B /* DoubleLinkedNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4743FAED13A508AE00657D3B /* DoubleLinkedNode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -50,6 +54,10 @@
 		4743FAC613A4211F00657D3B /* SingleLinkedList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleLinkedList.m; sourceTree = "<group>"; };
 		4743FAC913A421A900657D3B /* SingleLinkedNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleLinkedNode.h; sourceTree = "<group>"; };
 		4743FACA13A421A900657D3B /* SingleLinkedNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleLinkedNode.m; sourceTree = "<group>"; };
+		4743FAE513A5086200657D3B /* DoubleLinkedList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoubleLinkedList.h; sourceTree = "<group>"; };
+		4743FAE613A5086200657D3B /* DoubleLinkedList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoubleLinkedList.m; sourceTree = "<group>"; };
+		4743FAEC13A508AE00657D3B /* DoubleLinkedNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoubleLinkedNode.h; sourceTree = "<group>"; };
+		4743FAED13A508AE00657D3B /* DoubleLinkedNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoubleLinkedNode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,11 +114,9 @@
 			children = (
 				4743FABF13A41C5C00657D3B /* List.h */,
 				4743FAC013A41C6500657D3B /* Node.h */,
+				4743FAEA13A5087300657D3B /* Single Linked */,
+				4743FAEB13A5088800657D3B /* Double Linked */,
 				4743FA9A13A414FA00657D3B /* main.m */,
-				4743FAC513A4211F00657D3B /* SingleLinkedList.h */,
-				4743FAC613A4211F00657D3B /* SingleLinkedList.m */,
-				4743FAC913A421A900657D3B /* SingleLinkedNode.h */,
-				4743FACA13A421A900657D3B /* SingleLinkedNode.m */,
 				4743FA9C13A414FA00657D3B /* Supporting Files */,
 			);
 			path = "SimpleLists-ObjC";
@@ -151,6 +157,28 @@
 				4743FAB613A415DB00657D3B /* SimpleLists-UnitTest-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4743FAEA13A5087300657D3B /* Single Linked */ = {
+			isa = PBXGroup;
+			children = (
+				4743FAC513A4211F00657D3B /* SingleLinkedList.h */,
+				4743FAC613A4211F00657D3B /* SingleLinkedList.m */,
+				4743FAC913A421A900657D3B /* SingleLinkedNode.h */,
+				4743FACA13A421A900657D3B /* SingleLinkedNode.m */,
+			);
+			name = "Single Linked";
+			sourceTree = "<group>";
+		};
+		4743FAEB13A5088800657D3B /* Double Linked */ = {
+			isa = PBXGroup;
+			children = (
+				4743FAE513A5086200657D3B /* DoubleLinkedList.h */,
+				4743FAE613A5086200657D3B /* DoubleLinkedList.m */,
+				4743FAEC13A508AE00657D3B /* DoubleLinkedNode.h */,
+				4743FAED13A508AE00657D3B /* DoubleLinkedNode.m */,
+			);
+			name = "Double Linked";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +280,8 @@
 				4743FA9B13A414FA00657D3B /* main.m in Sources */,
 				4743FAC713A4211F00657D3B /* SingleLinkedList.m in Sources */,
 				4743FACB13A421A900657D3B /* SingleLinkedNode.m in Sources */,
+				4743FAE713A5086200657D3B /* DoubleLinkedList.m in Sources */,
+				4743FAEE13A508AE00657D3B /* DoubleLinkedNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +292,8 @@
 				4743FABA13A415DB00657D3B /* SimpleLists_UnitTest.m in Sources */,
 				4743FAC813A4211F00657D3B /* SingleLinkedList.m in Sources */,
 				4743FACC13A421A900657D3B /* SingleLinkedNode.m in Sources */,
+				4743FAE813A5086200657D3B /* DoubleLinkedList.m in Sources */,
+				4743FAEF13A508AE00657D3B /* DoubleLinkedNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +417,7 @@
 				4743FAA313A414FA00657D3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4743FABB13A415DB00657D3B /* Build configuration list for PBXNativeTarget "SimpleLists-UnitTest" */ = {
 			isa = XCConfigurationList;
@@ -393,6 +426,7 @@
 				4743FABD13A415DB00657D3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
