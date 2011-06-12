@@ -3,15 +3,19 @@
 //  SimpleLists-ObjC
 //
 //  Created by Xavier Jurado on 12/06/11.
-//  Copyright 2011 Ingens Networks. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import "List.h"
 
 
-@interface DoubleLinkedList : NSObject {
-@private
-    
-}
+@class DoubleLinkedNode;
+
+@interface DoubleLinkedList : NSObject <List>
+
+- (void)add:(DoubleLinkedNode *)node;
+- (void)remove:(DoubleLinkedNode *)node;
+- (DoubleLinkedNode *)nodeWithString:(NSString *)string;
+- (NSArray *)values;
 
 @end
