@@ -68,6 +68,28 @@
    STAssertEqualObjects(@"wilma", [list nodeWithString:@"wilma"].value, nil);
    array = [NSArray arrayWithObjects:@"fred", @"wilma", nil];
    STAssertEqualObjects(array, [list values], nil);
+   
+   [list release];
+   
+   list = [[SingleLinkedList alloc] init];
+   [list add:[SingleLinkedNode nodeWithValue:@"fred"]];
+   [list add:[SingleLinkedNode nodeWithValue:@"wilma"]];
+   [list add:[SingleLinkedNode nodeWithValue:@"betty"]];
+   [list add:[SingleLinkedNode nodeWithValue:@"barney"]];
+   array = [NSArray arrayWithObjects:@"fred", @"wilma", @"betty", @"barney", nil];
+   STAssertEqualObjects(array, [list values], nil);
+   [list remove:[list nodeWithString:@"wilma"]];
+   array = [NSArray arrayWithObjects:@"fred", @"betty", @"barney", nil];
+   STAssertEqualObjects(array, [list values], nil);
+   [list remove:[list nodeWithString:@"barney"]];
+   array = [NSArray arrayWithObjects:@"fred", @"betty", nil];
+   STAssertEqualObjects(array, [list values], nil);
+   [list remove:[list nodeWithString:@"fred"]];
+   array = [NSArray arrayWithObjects:@"betty", nil];
+   STAssertEqualObjects(array, [list values], nil);
+   [list remove:[list nodeWithString:@"betty"]];
+   array = [NSArray array];
+   STAssertEqualObjects(array, [list values], nil);
 }
 
 @end
