@@ -103,7 +103,7 @@
       iterator = iterator.nextNode;
    }
 
-   return [[NSArray copy] autorelease];
+   return [[values copy] autorelease];
 }
 
 @end
