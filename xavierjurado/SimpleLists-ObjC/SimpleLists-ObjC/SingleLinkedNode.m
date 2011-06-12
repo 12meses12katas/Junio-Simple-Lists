@@ -45,4 +45,10 @@
    [super dealloc];
 }
 
++ (id)nodeWithValue:(NSString *)value
+{
+   SingleLinkedNode *node = [[SingleLinkedNode alloc] initWithValue:value];
+   return [node autorelease];
+}
+
 @end

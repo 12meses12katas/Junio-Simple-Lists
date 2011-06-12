@@ -16,5 +16,6 @@
 
 - (id)init;
 - (id)initWithValue:(NSString *)value;
++ (id)nodeWithValue:(NSString *)value;
 
 @end
