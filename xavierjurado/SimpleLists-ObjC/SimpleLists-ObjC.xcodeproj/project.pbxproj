@@ -41,9 +41,6 @@
 		4743FA9D13A414FA00657D3B /* SimpleLists-ObjC-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimpleLists-ObjC-Prefix.pch"; sourceTree = "<group>"; };
 		4743FAA913A415DB00657D3B /* SimpleLists-UnitTest.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SimpleLists-UnitTest.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4743FAAA13A415DB00657D3B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		4743FAAD13A415DB00657D3B /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		4743FAAE13A415DB00657D3B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		4743FAAF13A415DB00657D3B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4743FAB213A415DB00657D3B /* SimpleLists-UnitTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SimpleLists-UnitTest-Info.plist"; sourceTree = "<group>"; };
 		4743FAB613A415DB00657D3B /* SimpleLists-UnitTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimpleLists-UnitTest-Prefix.pch"; sourceTree = "<group>"; };
 		4743FAB713A415DB00657D3B /* SimpleLists_UnitTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleLists_UnitTest.h; sourceTree = "<group>"; };
@@ -104,7 +101,6 @@
 			children = (
 				4743FA9713A414FA00657D3B /* Foundation.framework */,
 				4743FAAA13A415DB00657D3B /* Cocoa.framework */,
-				4743FAAC13A415DB00657D3B /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -116,6 +112,7 @@
 				4743FAC013A41C6500657D3B /* Node.h */,
 				4743FAEA13A5087300657D3B /* Single Linked */,
 				4743FAEB13A5088800657D3B /* Double Linked */,
+				47D73AF313A5800300AA80CF /* Not Linked */,
 				4743FA9A13A414FA00657D3B /* main.m */,
 				4743FA9C13A414FA00657D3B /* Supporting Files */,
 			);
@@ -128,16 +125,6 @@
 				4743FA9D13A414FA00657D3B /* SimpleLists-ObjC-Prefix.pch */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		4743FAAC13A415DB00657D3B /* Other Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				4743FAAD13A415DB00657D3B /* AppKit.framework */,
-				4743FAAE13A415DB00657D3B /* CoreData.framework */,
-				4743FAAF13A415DB00657D3B /* Foundation.framework */,
-			);
-			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
 		4743FAB013A415DB00657D3B /* SimpleLists-UnitTest */ = {
@@ -179,6 +166,13 @@
 				4743FAED13A508AE00657D3B /* DoubleLinkedNode.m */,
 			);
 			name = "Double Linked";
+			sourceTree = "<group>";
+		};
+		47D73AF313A5800300AA80CF /* Not Linked */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Not Linked";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
