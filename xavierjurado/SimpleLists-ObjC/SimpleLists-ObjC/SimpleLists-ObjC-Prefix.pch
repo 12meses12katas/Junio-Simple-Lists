@@ -1,7 +1,0 @@
-//
-// Prefix header for all source files of the 'SimpleLists-ObjC' target in the 'SimpleLists-ObjC' project
-//
-
-#ifdef __OBJC__
-   #import <Foundation/Foundation.h>
-#endif

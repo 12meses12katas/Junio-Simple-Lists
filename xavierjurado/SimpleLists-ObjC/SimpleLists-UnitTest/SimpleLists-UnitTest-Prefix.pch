@@ -1,7 +1,0 @@
-//
-// Prefix header for all source files of the 'SimpleLists-UnitTest' target in the 'SimpleLists-UnitTest' project
-//
-
-#ifdef __OBJC__
-   #import <Cocoa/Cocoa.h>
-#endif
