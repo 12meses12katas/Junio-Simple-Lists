@@ -20,6 +20,10 @@
 		4743FAE813A5086200657D3B /* DoubleLinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4743FAE613A5086200657D3B /* DoubleLinkedList.m */; };
 		4743FAEE13A508AE00657D3B /* DoubleLinkedNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4743FAED13A508AE00657D3B /* DoubleLinkedNode.m */; };
 		4743FAEF13A508AE00657D3B /* DoubleLinkedNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4743FAED13A508AE00657D3B /* DoubleLinkedNode.m */; };
+		477C50B213A9535C00271243 /* MyLinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = 477C50B113A9535C00271243 /* MyLinkedList.m */; };
+		477C50B313A9535C00271243 /* MyLinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = 477C50B113A9535C00271243 /* MyLinkedList.m */; };
+		477C50B613A9536D00271243 /* MyLinkedNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 477C50B513A9536D00271243 /* MyLinkedNode.m */; };
+		477C50B713A9536D00271243 /* MyLinkedNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 477C50B513A9536D00271243 /* MyLinkedNode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -55,6 +59,10 @@
 		4743FAE613A5086200657D3B /* DoubleLinkedList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoubleLinkedList.m; sourceTree = "<group>"; };
 		4743FAEC13A508AE00657D3B /* DoubleLinkedNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoubleLinkedNode.h; sourceTree = "<group>"; };
 		4743FAED13A508AE00657D3B /* DoubleLinkedNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoubleLinkedNode.m; sourceTree = "<group>"; };
+		477C50B013A9535C00271243 /* MyLinkedList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLinkedList.h; sourceTree = "<group>"; };
+		477C50B113A9535C00271243 /* MyLinkedList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLinkedList.m; sourceTree = "<group>"; };
+		477C50B413A9536D00271243 /* MyLinkedNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLinkedNode.h; sourceTree = "<group>"; };
+		477C50B513A9536D00271243 /* MyLinkedNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLinkedNode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +179,10 @@
 		47D73AF313A5800300AA80CF /* Not Linked */ = {
 			isa = PBXGroup;
 			children = (
+				477C50B013A9535C00271243 /* MyLinkedList.h */,
+				477C50B113A9535C00271243 /* MyLinkedList.m */,
+				477C50B413A9536D00271243 /* MyLinkedNode.h */,
+				477C50B513A9536D00271243 /* MyLinkedNode.m */,
 			);
 			name = "Not Linked";
 			sourceTree = "<group>";
@@ -276,6 +288,8 @@
 				4743FACB13A421A900657D3B /* SingleLinkedNode.m in Sources */,
 				4743FAE713A5086200657D3B /* DoubleLinkedList.m in Sources */,
 				4743FAEE13A508AE00657D3B /* DoubleLinkedNode.m in Sources */,
+				477C50B213A9535C00271243 /* MyLinkedList.m in Sources */,
+				477C50B613A9536D00271243 /* MyLinkedNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +302,8 @@
 				4743FACC13A421A900657D3B /* SingleLinkedNode.m in Sources */,
 				4743FAE813A5086200657D3B /* DoubleLinkedList.m in Sources */,
 				4743FAEF13A508AE00657D3B /* DoubleLinkedNode.m in Sources */,
+				477C50B313A9535C00271243 /* MyLinkedList.m in Sources */,
+				477C50B713A9536D00271243 /* MyLinkedNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
