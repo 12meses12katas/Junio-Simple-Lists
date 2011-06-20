@@ -1,0 +1,5 @@
+- Coded SinglyLinkedList, DoublyLinkedList and the tests. All tests passed OK.
+
+- [SinglyLinkedList] I realized that I was inserting new elements in the tail
+  (like in an std::vector when you push_back en element) but it is more 
+  efficient to insert new elements on the front. All tests passed OK.
