@@ -1,28 +1,29 @@
-﻿using System;
-using kata.junio.lists.nodes;
-
-namespace kata.junio.lists.DoubleLinked
+﻿namespace kata.junio.lists.DoubleLinked
 {
     internal class List : IKataList
     {
+        #region IKataList Members
+
         public string[] Values
         {
-            get { throw new NotImplementedException(); }
+            get { throw new System.NotImplementedException(); }
         }
 
-        public ListNode Find(string value)
+        public nodes.ListNode Find(string value)
         {
-            throw new NotImplementedException();
+            throw new System.NotImplementedException();
         }
 
         public void Add(string value)
         {
-            throw new NotImplementedException();
+            throw new System.NotImplementedException();
         }
 
-        public void Delete(ListNode listNode)
+        public void Delete(nodes.ListNode listNode)
         {
-            throw new NotImplementedException();
+            throw new System.NotImplementedException();
         }
+
+        #endregion IKataList Members
     }
 }

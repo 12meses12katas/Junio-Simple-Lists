@@ -43,6 +43,7 @@
     <Compile Include="doublelinked\List.cs" />
     <Compile Include="IKataList.cs" />
     <Compile Include="nodes\ListNode.cs" />
+    <Compile Include="nodes\SingleListNode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="singlelinked\List.cs" />
   </ItemGroup>
