@@ -5,3 +5,4 @@
 /TestResults
 *.vspscc
 *.vssscc
+_ReSharper.*/
