@@ -6,7 +6,7 @@ namespace kata.junio.lists.test
     public class TestLists
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestSingleLinkedLists()
         {
             IKataList list = new singlelinked.List();
 
