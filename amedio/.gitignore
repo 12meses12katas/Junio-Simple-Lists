@@ -3,6 +3,7 @@
 *.suo
 *.user
 /TestResults
+TestResults/
 *.vspscc
 *.vssscc
 _ReSharper.*/
