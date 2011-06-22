@@ -21,37 +21,87 @@
       var values;
       values = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
       return values.forEach(__bind(function(value) {
-        var last, node;
+        var current, node;
         node = new Node(value);
         if (this.first != null) {
-          last = this.first;
-          while (last.next != null) {
-            last = last.next;
+          current = this.first;
+          while (current.next != null) {
+            current = current.next;
           }
-          last.next = node;
+          current.next = node;
         } else {
           this.first = node;
         }
         return this.size++;
       }, this));
     };
+    LinkedList.prototype.find = function(value) {
+      return this.select(function(item) {
+        return item.value === ("" + value);
+      });
+    };
+    LinkedList.prototype.values = function() {
+      return this.collect(function(node) {
+        return node.value;
+      });
+    };
+    LinkedList.prototype.each = function(callback) {
+      var item, _results;
+      item = this.first;
+      _results = [];
+      while (item != null) {
+        callback.call(this, item);
+        _results.push(item = item.next);
+      }
+      return _results;
+    };
+    LinkedList.prototype.collect = function(callback) {
+      var item, values;
+      item = this.first;
+      values = [];
+      while (item != null) {
+        values.push(callback.call(this, item));
+        item = item.next;
+      }
+      return values;
+    };
+    LinkedList.prototype.select = function(callback) {
+      var item, notFound;
+      item = this.first;
+      notFound = true;
+      while ((item != null) && notFound) {
+        notFound = !callback.call(this, item);
+        if (notFound) {
+          item = item.next;
+        }
+      }
+      return item;
+    };
+    LinkedList.prototype.each = function(callback) {
+      var item, _results;
+      item = this.first;
+      _results = [];
+      while (item != null) {
+        callback.call(this, item);
+        _results.push(item = item.next);
+      }
+      return _results;
+    };
     LinkedList.prototype.toString = function() {
       return this.join(", ");
     };
     LinkedList.prototype.join = function(delimiter) {
-      var buffer, item;
+      var buffer;
       if (delimiter == null) {
         delimiter = " ";
       }
       buffer = "";
-      item = this.first;
-      while (item != null) {
+      this.each(function(item) {
         buffer += "" + item.value;
         if (item.next != null) {
-          buffer += delimiter;
+          return buffer += delimiter;
         }
-        item = item.next;
-      }
+      });
       return "<" + buffer + ">";
     };
     return LinkedList;
