@@ -8,21 +8,21 @@ import static org.junit.Assert.*;
  *
  * @author sortega
  */
-public class SinglyLinkedListTest {
+public class DoubleLinkedListTest {
     private SimpleList empty;
     private SimpleList numbers;
     private SimpleList names;
 
     @Before
     public void setUp() throws Exception {
-        empty = new SinglyLinkedList();
+        empty = new DoubleLinkedList();
 
-        numbers = new SinglyLinkedList();
+        numbers = new DoubleLinkedList();
         numbers.add("uno");
         numbers.add("dos");
         numbers.add("tres");
 
-        names = new SinglyLinkedList();
+        names = new DoubleLinkedList();
         names.add("fred");
         names.add("wilma");
         names.add("betty");
@@ -31,7 +31,7 @@ public class SinglyLinkedListTest {
 
     @Test
     public void newListsAreEmpty() {
-        SimpleList instance = new SinglyLinkedList();
+        SimpleList instance = new DoubleLinkedList();
         assertArrayEquals(new String[0], instance.values());
     }
 
@@ -52,6 +52,13 @@ public class SinglyLinkedListTest {
     @Test
     public void nullOnNotFound() {
         assertNull(numbers.find("cuatro"));
+    }
+
+    @Test
+    public void shouldFindFirst() {
+        Node result = numbers.find("uno");
+        assertNotNull(result);
+        assertEquals("uno", result.getValue());
     }
 
     @Test
@@ -84,7 +91,7 @@ public class SinglyLinkedListTest {
 
     @Test
     public void shouldDeleteOnly() {
-        SimpleList list = new SinglyLinkedList();
+        SimpleList list = new DoubleLinkedList();
         list.add("only");
 
         list.delete(list.find("only"));
