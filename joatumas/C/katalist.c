@@ -39,9 +39,18 @@ void print_node(node_t *node){
 }
 
 int assert_equal(cadena *llista1, cadena *llista2){
+/*	if(strcmp(llista1, llista2))*/
 	return 0;
 }
+
 int assert_nil(node_t *nod){
+	if(nod == NULL){
+		printf("Es null\n");
+		return(1);
+	}else{
+		printf("No es null\n");
+		return(0);
+	}
 }
 
 void add_f(cadena cad_in){
