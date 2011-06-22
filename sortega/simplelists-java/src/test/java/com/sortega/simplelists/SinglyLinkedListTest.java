@@ -1,6 +1,6 @@
 package com.sortega.simplelists;
 
-import org.junit.BeforeClass;
+import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -9,9 +9,24 @@ import static org.junit.Assert.*;
  * @author sortega
  */
 public class SinglyLinkedListTest {
+    private SimpleList empty;
+    private SimpleList numbers;
+    private SimpleList names;
 
-    @BeforeClass
-    public static void setUpClass() throws Exception {
+    @Before
+    public void setUp() throws Exception {
+        empty = new SinglyLinkedList();
+
+        numbers = new SinglyLinkedList();
+        numbers.add("uno");
+        numbers.add("dos");
+        numbers.add("tres");
+
+        names = new SinglyLinkedList();
+        names.add("fred");
+        names.add("wilma");
+        names.add("betty");
+        names.add("barney");
     }
 
     @Test
@@ -21,54 +36,58 @@ public class SinglyLinkedListTest {
     }
 
     @Test
+    public void shouldAppendFirstElement() {
+        empty.add("primero");
+        assertArrayEquals(new String[] {"primero"},
+                empty.values());
+    }
+
+    @Test
     public void shouldAppendStringsAtTheEnd() {
-        SimpleList instance = new SinglyLinkedList();
-        instance.add("uno");
-        instance.add("dos");
-        instance.add("tres");
-        assertArrayEquals(new String[] {"uno", "dos", "tres"}, instance.values());
+        numbers.add("cuatro");
+        assertArrayEquals(new String[] {"uno", "dos", "tres", "cuatro"},
+                numbers.values());
     }
 
     @Test
     public void nullOnNotFound() {
-        SimpleList instance = new SinglyLinkedList();
-        instance.add("uno");
-        instance.add("dos");
-        instance.add("tres");
-        assertNull(instance.find("cuatro"));
+        assertNull(numbers.find("cuatro"));
     }
 
     @Test
     public void nodeWhenFound() {
-        SimpleList instance = new SinglyLinkedList();
-        instance.add("uno");
-        instance.add("dos");
-        instance.add("tres");
-        instance.add("dos");
-
-        Node result = instance.find("dos");
+        Node result = numbers.find("dos");
         assertNotNull(result);
         assertEquals("dos", result.getValue());
     }
 
     @Test
-    public void shouldDeleteNodes() {
-         SimpleList instance = new SinglyLinkedList();
-        instance.add("fred");
-        instance.add("wilma");
-        instance.add("betty");
-        instance.add("barney");
+    public void shouldDeleteFirst() {
+        names.delete(names.find("fred"));
+        assertArrayEquals(new String[] {"wilma", "betty", "barney"},
+                names.values());
+    }
 
-        assertArrayEquals(new String[] {"fred", "wilma", "betty", "barney"},
-                instance.values());
-        instance.delete(instance.find("wilma"));
+    @Test
+    public void shouldDeleteLast() {
+        names.delete(names.find("barney"));
+        assertArrayEquals(new String[] {"fred", "wilma", "betty"},
+                names.values());
+    }
+
+    @Test
+    public void shouldDeleteNode() {
+        names.delete(names.find("wilma"));
         assertArrayEquals(new String[] {"fred", "betty", "barney"},
-                instance.values());
-        instance.delete(instance.find("barney"));
-        assertArrayEquals(new String[] {"fred", "betty"}, instance.values());
-        instance.delete(instance.find("fred"));
-        assertArrayEquals(new String[] {"betty"}, instance.values());
-        instance.delete(instance.find("betty"));
-        assertArrayEquals(new String[] {}, instance.values());
+                names.values());
+    }
+
+    @Test
+    public void shouldDeleteOnly() {
+        SimpleList list = new SinglyLinkedList();
+        list.add("only");
+
+        list.delete(list.find("only"));
+        assertArrayEquals(new String[] {}, list.values());
     }
 }
