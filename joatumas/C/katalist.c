@@ -70,7 +70,7 @@ void delete_f(node_t *node){
 	}
 	if(act == ant){
 		//FIRST node
-		llista.first = act.next;
+		llista.first = act->next;
 	}else if(act == NULL){
 		//Node not in list
 	}else{
@@ -82,6 +82,14 @@ void delete_f(node_t *node){
 }
 
 node_t *find_f(cadena cad){
+	node_t *aux = llista.first;
+	while(aux != NULL){
+		if (strcmp(aux->cad, cad)){
+			aux = aux->next;
+		}else{
+			return(aux);
+		}
+	}
 	return NULL;
 }
 
