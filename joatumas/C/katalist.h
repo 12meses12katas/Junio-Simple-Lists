@@ -3,7 +3,7 @@ typedef char *cadena;
 
 typedef struct __node_t{
 	int index;
-	cadena cad;
+	char cad[MAXCADENA];
 	struct __node_t *next;
 	cadena (*value)();
 }node_t;
@@ -12,7 +12,7 @@ typedef struct{
 	void (*add)(cadena);
 	void (*delete)(node_t*);
 	node_t *(*find)(cadena);
-	struct node_t *first;
+	node_t *first;
 }s_list;
 
 void add_f(cadena cad);
