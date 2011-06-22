@@ -1,0 +1,14 @@
+-----------------------
+-- 12 meses 12 katas --
+-----------------------
+Junio - Simple Litst
+
+Warning! --> this kata contains Java!
+Or I should say my folder for this kata contains Java. I have created a very simple maven 2 project to build the project.
+'mvn test' should do the trick (if you have maven 2 installed!).
+
+
+Peligro! --> esta kata contiene Java!
+La kata ha sido desarrollada con Java y maven. Para construir el proyecto, usando 'mvn install' o 'mvn test' debería ser suficiente.
+
+Jos - June 2o11

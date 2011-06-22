@@ -1,0 +1,444 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4743FA9813A414FA00657D3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4743FA9713A414FA00657D3B /* Foundation.framework */; };
+		4743FA9B13A414FA00657D3B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4743FA9A13A414FA00657D3B /* main.m */; };
+		4743FAAB13A415DB00657D3B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4743FAAA13A415DB00657D3B /* Cocoa.framework */; };
+		4743FAB813A415DB00657D3B /* SimpleLists_UnitTest.h in Resources */ = {isa = PBXBuildFile; fileRef = 4743FAB713A415DB00657D3B /* SimpleLists_UnitTest.h */; };
+		4743FABA13A415DB00657D3B /* SimpleLists_UnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4743FAB913A415DB00657D3B /* SimpleLists_UnitTest.m */; };
+		4743FAC713A4211F00657D3B /* SingleLinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4743FAC613A4211F00657D3B /* SingleLinkedList.m */; };
+		4743FAC813A4211F00657D3B /* SingleLinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4743FAC613A4211F00657D3B /* SingleLinkedList.m */; };
+		4743FACB13A421A900657D3B /* SingleLinkedNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4743FACA13A421A900657D3B /* SingleLinkedNode.m */; };
+		4743FACC13A421A900657D3B /* SingleLinkedNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4743FACA13A421A900657D3B /* SingleLinkedNode.m */; };
+		4743FAE713A5086200657D3B /* DoubleLinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4743FAE613A5086200657D3B /* DoubleLinkedList.m */; };
+		4743FAE813A5086200657D3B /* DoubleLinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4743FAE613A5086200657D3B /* DoubleLinkedList.m */; };
+		4743FAEE13A508AE00657D3B /* DoubleLinkedNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4743FAED13A508AE00657D3B /* DoubleLinkedNode.m */; };
+		4743FAEF13A508AE00657D3B /* DoubleLinkedNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4743FAED13A508AE00657D3B /* DoubleLinkedNode.m */; };
+		477C50B213A9535C00271243 /* MyLinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = 477C50B113A9535C00271243 /* MyLinkedList.m */; };
+		477C50B313A9535C00271243 /* MyLinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = 477C50B113A9535C00271243 /* MyLinkedList.m */; };
+		477C50B613A9536D00271243 /* MyLinkedNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 477C50B513A9536D00271243 /* MyLinkedNode.m */; };
+		477C50B713A9536D00271243 /* MyLinkedNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 477C50B513A9536D00271243 /* MyLinkedNode.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4743FA9113A414FA00657D3B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		4743FA9313A414FA00657D3B /* SimpleLists-ObjC */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "SimpleLists-ObjC"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4743FA9713A414FA00657D3B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4743FA9A13A414FA00657D3B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4743FA9D13A414FA00657D3B /* SimpleLists-ObjC-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimpleLists-ObjC-Prefix.pch"; sourceTree = "<group>"; };
+		4743FAA913A415DB00657D3B /* SimpleLists-UnitTest.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SimpleLists-UnitTest.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4743FAAA13A415DB00657D3B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		4743FAB213A415DB00657D3B /* SimpleLists-UnitTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SimpleLists-UnitTest-Info.plist"; sourceTree = "<group>"; };
+		4743FAB613A415DB00657D3B /* SimpleLists-UnitTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimpleLists-UnitTest-Prefix.pch"; sourceTree = "<group>"; };
+		4743FAB713A415DB00657D3B /* SimpleLists_UnitTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleLists_UnitTest.h; sourceTree = "<group>"; };
+		4743FAB913A415DB00657D3B /* SimpleLists_UnitTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleLists_UnitTest.m; sourceTree = "<group>"; };
+		4743FABF13A41C5C00657D3B /* List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = List.h; sourceTree = "<group>"; };
+		4743FAC013A41C6500657D3B /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
+		4743FAC513A4211F00657D3B /* SingleLinkedList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleLinkedList.h; sourceTree = "<group>"; };
+		4743FAC613A4211F00657D3B /* SingleLinkedList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleLinkedList.m; sourceTree = "<group>"; };
+		4743FAC913A421A900657D3B /* SingleLinkedNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleLinkedNode.h; sourceTree = "<group>"; };
+		4743FACA13A421A900657D3B /* SingleLinkedNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleLinkedNode.m; sourceTree = "<group>"; };
+		4743FAE513A5086200657D3B /* DoubleLinkedList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoubleLinkedList.h; sourceTree = "<group>"; };
+		4743FAE613A5086200657D3B /* DoubleLinkedList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoubleLinkedList.m; sourceTree = "<group>"; };
+		4743FAEC13A508AE00657D3B /* DoubleLinkedNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoubleLinkedNode.h; sourceTree = "<group>"; };
+		4743FAED13A508AE00657D3B /* DoubleLinkedNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoubleLinkedNode.m; sourceTree = "<group>"; };
+		477C50B013A9535C00271243 /* MyLinkedList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLinkedList.h; sourceTree = "<group>"; };
+		477C50B113A9535C00271243 /* MyLinkedList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLinkedList.m; sourceTree = "<group>"; };
+		477C50B413A9536D00271243 /* MyLinkedNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLinkedNode.h; sourceTree = "<group>"; };
+		477C50B513A9536D00271243 /* MyLinkedNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLinkedNode.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4743FA9013A414FA00657D3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4743FA9813A414FA00657D3B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4743FAA513A415DB00657D3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4743FAAB13A415DB00657D3B /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4743FA8813A414F900657D3B = {
+			isa = PBXGroup;
+			children = (
+				4743FA9913A414FA00657D3B /* SimpleLists-ObjC */,
+				4743FAB013A415DB00657D3B /* SimpleLists-UnitTest */,
+				4743FA9613A414FA00657D3B /* Frameworks */,
+				4743FA9413A414FA00657D3B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4743FA9413A414FA00657D3B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4743FA9313A414FA00657D3B /* SimpleLists-ObjC */,
+				4743FAA913A415DB00657D3B /* SimpleLists-UnitTest.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4743FA9613A414FA00657D3B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4743FA9713A414FA00657D3B /* Foundation.framework */,
+				4743FAAA13A415DB00657D3B /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4743FA9913A414FA00657D3B /* SimpleLists-ObjC */ = {
+			isa = PBXGroup;
+			children = (
+				4743FABF13A41C5C00657D3B /* List.h */,
+				4743FAC013A41C6500657D3B /* Node.h */,
+				4743FAEA13A5087300657D3B /* Single Linked */,
+				4743FAEB13A5088800657D3B /* Double Linked */,
+				47D73AF313A5800300AA80CF /* Not Linked */,
+				4743FA9A13A414FA00657D3B /* main.m */,
+				4743FA9C13A414FA00657D3B /* Supporting Files */,
+			);
+			path = "SimpleLists-ObjC";
+			sourceTree = "<group>";
+		};
+		4743FA9C13A414FA00657D3B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4743FA9D13A414FA00657D3B /* SimpleLists-ObjC-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4743FAB013A415DB00657D3B /* SimpleLists-UnitTest */ = {
+			isa = PBXGroup;
+			children = (
+				4743FAB713A415DB00657D3B /* SimpleLists_UnitTest.h */,
+				4743FAB913A415DB00657D3B /* SimpleLists_UnitTest.m */,
+				4743FAB113A415DB00657D3B /* Supporting Files */,
+			);
+			path = "SimpleLists-UnitTest";
+			sourceTree = "<group>";
+		};
+		4743FAB113A415DB00657D3B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4743FAB213A415DB00657D3B /* SimpleLists-UnitTest-Info.plist */,
+				4743FAB613A415DB00657D3B /* SimpleLists-UnitTest-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4743FAEA13A5087300657D3B /* Single Linked */ = {
+			isa = PBXGroup;
+			children = (
+				4743FAC513A4211F00657D3B /* SingleLinkedList.h */,
+				4743FAC613A4211F00657D3B /* SingleLinkedList.m */,
+				4743FAC913A421A900657D3B /* SingleLinkedNode.h */,
+				4743FACA13A421A900657D3B /* SingleLinkedNode.m */,
+			);
+			name = "Single Linked";
+			sourceTree = "<group>";
+		};
+		4743FAEB13A5088800657D3B /* Double Linked */ = {
+			isa = PBXGroup;
+			children = (
+				4743FAE513A5086200657D3B /* DoubleLinkedList.h */,
+				4743FAE613A5086200657D3B /* DoubleLinkedList.m */,
+				4743FAEC13A508AE00657D3B /* DoubleLinkedNode.h */,
+				4743FAED13A508AE00657D3B /* DoubleLinkedNode.m */,
+			);
+			name = "Double Linked";
+			sourceTree = "<group>";
+		};
+		47D73AF313A5800300AA80CF /* Not Linked */ = {
+			isa = PBXGroup;
+			children = (
+				477C50B013A9535C00271243 /* MyLinkedList.h */,
+				477C50B113A9535C00271243 /* MyLinkedList.m */,
+				477C50B413A9536D00271243 /* MyLinkedNode.h */,
+				477C50B513A9536D00271243 /* MyLinkedNode.m */,
+			);
+			name = "Not Linked";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4743FA9213A414FA00657D3B /* SimpleLists-ObjC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4743FAA113A414FA00657D3B /* Build configuration list for PBXNativeTarget "SimpleLists-ObjC" */;
+			buildPhases = (
+				4743FA8F13A414FA00657D3B /* Sources */,
+				4743FA9013A414FA00657D3B /* Frameworks */,
+				4743FA9113A414FA00657D3B /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SimpleLists-ObjC";
+			productName = "SimpleLists-ObjC";
+			productReference = 4743FA9313A414FA00657D3B /* SimpleLists-ObjC */;
+			productType = "com.apple.product-type.tool";
+		};
+		4743FAA813A415DB00657D3B /* SimpleLists-UnitTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4743FABB13A415DB00657D3B /* Build configuration list for PBXNativeTarget "SimpleLists-UnitTest" */;
+			buildPhases = (
+				4743FAA413A415DB00657D3B /* Sources */,
+				4743FAA513A415DB00657D3B /* Frameworks */,
+				4743FAA613A415DB00657D3B /* Resources */,
+				4743FAA713A415DB00657D3B /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SimpleLists-UnitTest";
+			productName = "SimpleLists-UnitTest";
+			productReference = 4743FAA913A415DB00657D3B /* SimpleLists-UnitTest.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4743FA8A13A414F900657D3B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "";
+			};
+			buildConfigurationList = 4743FA8D13A414F900657D3B /* Build configuration list for PBXProject "SimpleLists-ObjC" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4743FA8813A414F900657D3B;
+			productRefGroup = 4743FA9413A414FA00657D3B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4743FA9213A414FA00657D3B /* SimpleLists-ObjC */,
+				4743FAA813A415DB00657D3B /* SimpleLists-UnitTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4743FAA613A415DB00657D3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4743FAB813A415DB00657D3B /* SimpleLists_UnitTest.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4743FAA713A415DB00657D3B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4743FA8F13A414FA00657D3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4743FA9B13A414FA00657D3B /* main.m in Sources */,
+				4743FAC713A4211F00657D3B /* SingleLinkedList.m in Sources */,
+				4743FACB13A421A900657D3B /* SingleLinkedNode.m in Sources */,
+				4743FAE713A5086200657D3B /* DoubleLinkedList.m in Sources */,
+				4743FAEE13A508AE00657D3B /* DoubleLinkedNode.m in Sources */,
+				477C50B213A9535C00271243 /* MyLinkedList.m in Sources */,
+				477C50B613A9536D00271243 /* MyLinkedNode.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4743FAA413A415DB00657D3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4743FABA13A415DB00657D3B /* SimpleLists_UnitTest.m in Sources */,
+				4743FAC813A4211F00657D3B /* SingleLinkedList.m in Sources */,
+				4743FACC13A421A900657D3B /* SingleLinkedNode.m in Sources */,
+				4743FAE813A5086200657D3B /* DoubleLinkedList.m in Sources */,
+				4743FAEF13A508AE00657D3B /* DoubleLinkedNode.m in Sources */,
+				477C50B313A9535C00271243 /* MyLinkedList.m in Sources */,
+				477C50B713A9536D00271243 /* MyLinkedNode.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4743FA9F13A414FA00657D3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		4743FAA013A414FA00657D3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		4743FAA213A414FA00657D3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SimpleLists-ObjC/SimpleLists-ObjC-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4743FAA313A414FA00657D3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SimpleLists-ObjC/SimpleLists-ObjC-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		4743FABC13A415DB00657D3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SimpleLists-UnitTest/SimpleLists-UnitTest-Prefix.pch";
+				INFOPLIST_FILE = "SimpleLists-UnitTest/SimpleLists-UnitTest-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		4743FABD13A415DB00657D3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SimpleLists-UnitTest/SimpleLists-UnitTest-Prefix.pch";
+				INFOPLIST_FILE = "SimpleLists-UnitTest/SimpleLists-UnitTest-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4743FA8D13A414F900657D3B /* Build configuration list for PBXProject "SimpleLists-ObjC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4743FA9F13A414FA00657D3B /* Debug */,
+				4743FAA013A414FA00657D3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4743FAA113A414FA00657D3B /* Build configuration list for PBXNativeTarget "SimpleLists-ObjC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4743FAA213A414FA00657D3B /* Debug */,
+				4743FAA313A414FA00657D3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4743FABB13A415DB00657D3B /* Build configuration list for PBXNativeTarget "SimpleLists-UnitTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4743FABC13A415DB00657D3B /* Debug */,
+				4743FABD13A415DB00657D3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4743FA8A13A414F900657D3B /* Project object */;
+}
