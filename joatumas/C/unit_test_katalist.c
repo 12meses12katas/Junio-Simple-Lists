@@ -2,19 +2,24 @@
 #include <stdlib.h>
 #include "katalist.h"
 
-extern s_list llista;
+extern s_list list;
+cadena *llista_cadenes;
 
 int main(){
 	cadena listo1[MAXCADENA] = {"hola", "hola2", "hola3", 0};
+	cadena aux_cad;
 	//print_llista();
 
 	//First license:
 	init();
 	//list = List.new;
 
-	assert_nil(llista.find("fred"));
-	llista.add("fred");
-	assert_nil(llista.find("fred"));
+	assert_nil(list.find("fred"));
+	list.add("fred");
+	assert_nil(list.find("fred"));
+	llista_cadenes = list.values();
+	print_llista(llista_cadenes);
+	aux_cad = list.find("fred")->value();
 
 	/*TODO: to be uncommented in the future:
 	assert_equal("fred", list.find("fred").value());

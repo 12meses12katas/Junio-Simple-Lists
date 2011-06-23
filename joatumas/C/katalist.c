@@ -61,7 +61,7 @@ void add_f(cadena cad_in){
 	strcpy(aux->cad, cad_in);
 	aux->next = NULL;
 	aux->index = max_ind++;
-	//aux->value = value_f;
+	aux->value = value_f;
 	aux3 = find_last();
 	if(aux3 == NULL){
 		//Void list
@@ -104,5 +104,17 @@ node_t *find_f(cadena cad){
 }
 
 cadena *values_f(){
+	int i=0;
+	node_t *aux = llista.first;
+	while(aux != NULL){
+		vector_cadena[i] = aux->cad;
+		aux = aux->next;
+		i++;
+	}
+	vector_cadena[i] = 0;
 	return(vector_cadena);
+}
+
+cadena value_f(){
+	return
 }
