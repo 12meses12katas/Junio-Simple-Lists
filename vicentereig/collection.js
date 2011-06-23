@@ -39,16 +39,15 @@
       }, this));
     };
     LinkedList.prototype["delete"] = function(value) {
-      var current, deleted, prev, _ref;
-      if (((_ref = this.head) != null ? _ref.value : void 0) === value) {
-        deleted = this.head;
-        this.head = this.head.next;
-        this._size--;
-        return deleted;
-      }
+      return this.reject(function(node) {
+        return node.value !== value;
+      });
+    };
+    LinkedList.prototype.reject = function(callback) {
+      var current, deleted, prev;
       current = this.head;
       prev = null;
-      while (((current != null ? current.next : void 0) != null) && current.value !== value) {
+      while (((current != null ? current.next : void 0) != null) && callback.call(this, current)) {
         prev = current;
         current = current.next;
       }
@@ -221,7 +220,7 @@
     };
     return List;
   })();
-  exports.LinkedList = LinkedList;
-  exports.DoublyLinkedList = DoublyLinkedList;
-  exports.List = List;
+  this.LinkedList = LinkedList;
+  this.DoublyLinkedList = DoublyLinkedList;
+  this.List = List;
 }).call(this);
