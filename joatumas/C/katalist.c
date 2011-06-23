@@ -6,12 +6,14 @@
 s_list llista;
 
 int max_ind = 0;
+cadena vector_cadena[MAXCADENA];
 
 void init(){
 	llista.add = add_f;
 	llista.delete = delete_f;
 	llista.find = find_f;
 	llista.first = NULL;
+	llista.values = values_f;
 }
 
 void print_llista(cadena *llista){
@@ -39,7 +41,7 @@ void print_node(node_t *node){
 }
 
 int assert_equal(cadena *llista1, cadena *llista2){
-/*	if(strcmp(llista1, llista2))*/
+	//if(strcmp(llista1, llista2))
 	return 0;
 }
 
@@ -55,7 +57,6 @@ int assert_nil(node_t *nod){
 
 void add_f(cadena cad_in){
 	node_t *aux, *aux3;
-	char aux2[MAXCADENA];
 	aux = (node_t *)malloc(sizeof(node_t));
 	strcpy(aux->cad, cad_in);
 	aux->next = NULL;
@@ -102,3 +103,6 @@ node_t *find_f(cadena cad){
 	return NULL;
 }
 
+cadena *values_f(){
+	return(vector_cadena);
+}

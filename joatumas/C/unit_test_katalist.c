@@ -1,17 +1,22 @@
 #include <stdio.h>
-#include <katalist.h>
+#include <stdlib.h>
+#include "katalist.h"
+
+extern s_list llista;
 
 int main(){
 	cadena listo1[MAXCADENA] = {"hola", "hola2", "hola3", 0};
-	print_llista(listo1);
+	//print_llista();
 
 	//First license:
 	init();
 	//list = List.new;
 
+	assert_nil(llista.find("fred"));
+	llista.add("fred");
+	assert_nil(llista.find("fred"));
+
 	/*TODO: to be uncommented in the future:
-	assert_nil(list.find("fred"));
-	list.add("fred");
 	assert_equal("fred", list.find("fred").value());
 	assert_nil(list.find("wilma"));
 	list.add("wilma");
@@ -34,5 +39,5 @@ int main(){
 	list.delete(list.find("betty"));
 	assert_equal([], list.values());
 	*/
-
+	exit(0);
 }
