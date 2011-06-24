@@ -7,6 +7,7 @@ assert = require('assert')
   assert.equal list.values()[1], "World"
   assert.equal list.size(), 2
   console.log "#{list}"
+
   list.delete "World"
   assert.equal list.find "World", null
   assert.equal list.size(), 1
