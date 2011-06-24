@@ -6,7 +6,7 @@ extern s_list list;
 cadena *llista_cadenes;
 
 int main(){
-	cadena listo1[MAXCADENA] = {"hola", "hola2", "hola3", 0};
+	cadena listo1[MAXCADENA] = {"fred", "wilma", 0};
 	cadena aux_cad;
 	//print_llista();
 
@@ -19,17 +19,18 @@ int main(){
 	assert_nil(list.find("fred"));
 	llista_cadenes = list.values();
 	print_llista(llista_cadenes);
-	aux_cad = list.find("fred")->value();
-
-	/*TODO: to be uncommented in the future:
-	assert_equal("fred", list.find("fred").value());
+	aux_cad = list.find("fred")->value;
+	assert_equal("fred", list.find("fred")->value);
 	assert_nil(list.find("wilma"));
 	list.add("wilma");
-	assert_equal("fred",  list.find("fred").value());
-	assert_equal("wilma", list.find("wilma").value());
-	assert_equal(["fred", "wilma"], list.values());
+	assert_equal("fred",  list.find("fred")->value);
+	assert_equal("wilma", list.find("wilma")->value);
+	assert_equal_n(listo1, list.values());
 
-	list = List.new;
+	//list = List.new;
+	init();
+	/*TODO: to be uncommented in the future:
+
 	list.add("fred");
 	list.add("wilma");
 	list.add("betty");

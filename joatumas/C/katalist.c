@@ -3,17 +3,18 @@
 #include <string.h>
 #include "katalist.h"
 
-s_list llista;
+s_list list;
 
 int max_ind = 0;
 cadena vector_cadena[MAXCADENA];
 
 void init(){
-	llista.add = add_f;
-	llista.delete = delete_f;
-	llista.find = find_f;
-	llista.first = NULL;
-	llista.values = values_f;
+	list.add = add_f;
+	list.delete = delete_f;
+	list.find = find_f;
+	list.values = values_f;
+	max_ind = 0;
+	list.first = NULL;
 }
 
 void print_llista(cadena *llista){
@@ -28,7 +29,7 @@ void print_llista(cadena *llista){
 
 node_t *find_last(){
 	node_t *aux, *ret;
-	aux = ret = llista.first;
+	aux = ret = list.first;
 	while(aux != NULL){
 		ret = aux;
 		aux = aux->next;
@@ -40,9 +41,37 @@ void print_node(node_t *node){
 	printf("%s\n", node->cad);
 }
 
-int assert_equal(cadena *llista1, cadena *llista2){
-	//if(strcmp(llista1, llista2))
-	return 0;
+int assert_equal(cadena cad1, cadena cad2){
+	if(strcmp(cad1, cad2)){
+		printf("Son diferents\n");
+		return(1);
+	}else{
+		printf("Son iguals\n");
+		return(0);
+	}
+}
+
+int assert_equal_n(cadena *llista1, cadena *llista2){
+	int i=0;
+	for(i=0; i<MAXCADENA; i++){
+		if(llista1[i] == 0 && llista2[i] == 0){
+			//son iguals
+			printf("Son iguals\n");
+			return(0);
+		}else if(llista1[i] == 0 && llista2[i] == 0){
+			//son diferents
+			printf("Son diferents\n");
+			return(1);
+		}else{
+			if(strcmp(llista1[i], llista2[i])){
+				//son diferents
+				printf("Son diferents\n");
+				return(1);
+			}
+		}
+	}
+	printf("Xungo\n");
+	return(1);
 }
 
 int assert_nil(node_t *nod){
@@ -61,11 +90,12 @@ void add_f(cadena cad_in){
 	strcpy(aux->cad, cad_in);
 	aux->next = NULL;
 	aux->index = max_ind++;
-	aux->value = value_f;
+	aux->value = aux->cad;
+	//aux->value = value_f;
 	aux3 = find_last();
 	if(aux3 == NULL){
 		//Void list
-		llista.first = aux;
+		list.first = aux;
 	}else{
 		aux3->next = aux;
 	}
@@ -73,14 +103,14 @@ void add_f(cadena cad_in){
 
 void delete_f(node_t *node){
 	node_t *act, *ant;
-	act = ant = llista.first;
+	act = ant = list.first;
 	while((act != NULL) && (act->index != node->index)){
 		ant = act;
 		act = act->next;
 	}
 	if(act == ant){
 		//FIRST node
-		llista.first = act->next;
+		list.first = act->next;
 	}else if(act == NULL){
 		//Node not in list
 	}else{
@@ -92,7 +122,7 @@ void delete_f(node_t *node){
 }
 
 node_t *find_f(cadena cad){
-	node_t *aux = llista.first;
+	node_t *aux = list.first;
 	while(aux != NULL){
 		if (strcmp(aux->cad, cad)){
 			aux = aux->next;
@@ -105,7 +135,7 @@ node_t *find_f(cadena cad){
 
 cadena *values_f(){
 	int i=0;
-	node_t *aux = llista.first;
+	node_t *aux = list.first;
 	while(aux != NULL){
 		vector_cadena[i] = aux->cad;
 		aux = aux->next;
@@ -115,6 +145,6 @@ cadena *values_f(){
 	return(vector_cadena);
 }
 
-cadena value_f(){
-	return
-}
+/*inline cadena value_f(){
+	return aux->cad; 
+}*/
