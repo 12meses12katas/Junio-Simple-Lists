@@ -9,11 +9,18 @@ int max_ind = 0;
 cadena vector_cadena[MAXCADENA];
 
 void init(){
+	node_t *aux;
 	list.add = add_f;
 	list.delete = delete_f;
 	list.find = find_f;
 	list.values = values_f;
 	max_ind = 0;
+	//Free memory... hipòcrita...
+	aux = find_last();
+	while(aux != NULL){
+		delete_f(aux);
+		aux = find_last();
+	}
 	list.first = NULL;
 }
 
