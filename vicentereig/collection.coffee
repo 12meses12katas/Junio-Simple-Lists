@@ -16,18 +16,15 @@ class LinkedList
         @head = node
 
   delete: (value) ->
-    if @head?.value == value
-      deleted = @head
-      @head   = @head.next
-      @_size--
-      return deleted
+    @reject (node) -> node.value != value
 
+  reject: (callback) ->
     current = @head
     prev    = null
-    # reject!
-    while current?.next? and current.value != value
+    while current?.next? and callback.call @, current
       prev    = current
       current = current.next
+
     deleted = current
     prev.next = current.next
     @_size--
@@ -119,6 +116,6 @@ class List
   size: -> @storage.length
   clear: -> @storage = []
 
-exports.LinkedList       = LinkedList
-exports.DoublyLinkedList = DoublyLinkedList
-exports.List             = List
+@LinkedList       = LinkedList
+@DoublyLinkedList = DoublyLinkedList
+@List             = List
