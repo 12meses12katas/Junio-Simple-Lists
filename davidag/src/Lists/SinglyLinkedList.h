@@ -9,37 +9,32 @@
 #define SINGLYLINKEDLIST_H_
 
 #include "SimpleList.h"
+#include <string>
 
 struct SinglyLinkedNode;
 
-class SinglyLinkedList : public SimpleList<SinglyLinkedNode>
+class SinglyLinkedList : public SimpleList<SinglyLinkedNode, std::string>
 {
 public:
 	SinglyLinkedList();
-	virtual ~SinglyLinkedList();
+	~SinglyLinkedList();
 
+	// Add a node to the list.
 	virtual void 						add(const std::string& _string);
 
-	// Deletes a node from the list.
+	// Delete a node from the list.
 	virtual void						remove(SinglyLinkedNode* _node);
-
-	// Finds a node in the list.
-	virtual SinglyLinkedNode*		 	find(const std::string& _string);
-
-	// Returns an array of all the values in the list.
-	virtual std::vector<std::string>	values() const;
-
-private:
-	// The head of the list.
-	SinglyLinkedNode* head_;
 };
 
 // A node of the list.
 struct SinglyLinkedNode
 {
 	// Constructors
-	SinglyLinkedNode() : next_(0) { }
-	SinglyLinkedNode(const std::string& _value) : next_(0), value_(_value) { }
+	SinglyLinkedNode()
+		: next_(0) { }
+
+	SinglyLinkedNode(const std::string& _value)
+		: next_(0), value_(_value) { }
 
 	// Next element in the list.
 	SinglyLinkedNode* next_;

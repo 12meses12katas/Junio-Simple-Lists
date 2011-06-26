@@ -9,40 +9,36 @@
 #define DOUBLYLINKEDLIST_H_
 
 #include "SimpleList.h"
+#include <string>
 
 struct DoublyLinkedNode;
 
-class DoublyLinkedList : public SimpleList<DoublyLinkedNode>
+class DoublyLinkedList : public SimpleList<DoublyLinkedNode, std::string>
 {
 public:
 	DoublyLinkedList();
-	virtual ~DoublyLinkedList();
+	~DoublyLinkedList();
 
+	// Add a node to the list.
 	virtual void 						add(const std::string& _string);
 
-	// Deletes a node from the list.
+	// Delete a node from the list.
 	virtual void						remove(DoublyLinkedNode* _node);
 
-	// Finds a node in the list.
-	virtual DoublyLinkedNode*		 	find(const std::string& _string);
-
-	// Returns an array of all the values in the list.
-	virtual std::vector<std::string>	values() const;
-
 private:
-	// The head of the list.
-	DoublyLinkedNode* head_;
-
 	// The tail of the list.
-	DoublyLinkedNode* tail_;
+	DoublyLinkedNode* 			tail_;
 };
 
 // A node of the list.
 struct DoublyLinkedNode
 {
 	// Constructors
-	DoublyLinkedNode() : next_(0), prev_(0) { }
-	DoublyLinkedNode(const std::string& _value) : next_(0), prev_(0), value_(_value) { }
+	DoublyLinkedNode()
+		: next_(0), prev_(0) { }
+
+	DoublyLinkedNode(const std::string& _value)
+	    : next_(0), prev_(0), value_(_value) { }
 
 	// Next element in the list.
 	DoublyLinkedNode* next_;

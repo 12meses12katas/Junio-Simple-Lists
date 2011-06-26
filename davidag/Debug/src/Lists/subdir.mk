@@ -4,14 +4,17 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../src/Lists/CircularLinkedList.cpp \
 ../src/Lists/DoublyLinkedList.cpp \
 ../src/Lists/SinglyLinkedList.cpp 
 
 OBJS += \
+./src/Lists/CircularLinkedList.o \
 ./src/Lists/DoublyLinkedList.o \
 ./src/Lists/SinglyLinkedList.o 
 
 CPP_DEPS += \
+./src/Lists/CircularLinkedList.d \
 ./src/Lists/DoublyLinkedList.d \
 ./src/Lists/SinglyLinkedList.d 
 

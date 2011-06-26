@@ -1,5 +1,18 @@
-- Coded SinglyLinkedList, DoublyLinkedList and the tests. All tests passed OK.
+- Coded SinglyLinkedList, DoublyLinkedList and the generic test.
 
 - [SinglyLinkedList] I realized that I was inserting new elements in the tail
   (like in an std::vector when you push_back en element) but it is more 
-  efficient to insert new elements on the front. All tests passed OK.
+  efficient to insert new elements on the front.
+
+- Added sentinel nodes to both lists.
+
+- Templatized the list value types just to make the data structures more 
+  generic.
+  
+- Refactored values() and find() in base class to avoid code duplication.
+
+- Realised sentinel node in circular nodes must be per-object as next_ pointer
+  is different for each list. I decide that every list has its own sentinel node
+  which allows for code reuse and simplifies circular list implementation.
+
+- All tests passed OK.

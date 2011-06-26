@@ -8,95 +8,49 @@
 #include "SinglyLinkedList.h"
 #include <cassert>
 
-SinglyLinkedList::SinglyLinkedList()
-	: head_(0)
-{
 
+SinglyLinkedList::SinglyLinkedList()
+{
+	sentinel_node_ = new SinglyLinkedNode();
+	head_ = sentinel_node_;
 }
 
 SinglyLinkedList::~SinglyLinkedList()
 {
 	// Delete all elements in the list.
-	while (head_)
+	while (head_ != sentinel_node_)
 	{
 		SinglyLinkedNode* node_tmp = head_->next_;
 		delete head_;
 		head_ = node_tmp;
 	}
+	delete sentinel_node_;
 }
 
 void SinglyLinkedList::add(const std::string& _string)
 {
 	SinglyLinkedNode* new_node = new SinglyLinkedNode(_string);
 
-	// Boundary condition: Zero elements in the list.
-	if (head_ == 0)
-	{
-		head_ = new_node;
-		return;
-	}
-	else
-	{
-		new_node->next_ = head_;
-		head_ = new_node;
-	}
+	// General case
+	new_node->next_ = head_;
+	head_ = new_node;
 }
 
 void SinglyLinkedList::remove(SinglyLinkedNode* _node)
 {
-	assert(_node != 0);
+	// General case
+	SinglyLinkedNode** prev_node_next = &head_;
+	SinglyLinkedNode*  node = head_;
 
-	// Boundary condition: remove the head element.
-	if (head_ == _node)
+	while (node != sentinel_node_)
 	{
-		head_ = head_->next_;
-		delete _node;
-	}
-	else
-	{
-		// General case: removing an element that is not the head element.
-		SinglyLinkedNode* node = head_;
-		while (node->next_)
+		if (node == _node)
 		{
-			if (node->next_ == _node)
-			{
-				node->next_ = node->next_->next_;
-				delete _node;
-				return;
-			}
-			node = node->next_;
+			*prev_node_next = node->next_;
+			delete _node;
+			return;
 		}
-
-		assert(false && "Node not found");
-	}
-}
-
-SinglyLinkedNode* SinglyLinkedList::find(const std::string& _string)
-{
-	SinglyLinkedNode* node = head_;
-
-	while (node)
-	{
-		if (node->value_ == _string)
-			return node;
+		prev_node_next = &node->next_;
 		node = node->next_;
 	}
-
-	return 0;
-}
-
-std::vector<std::string> SinglyLinkedList::values() const
-{
-	std::vector<std::string> array;
-	SinglyLinkedNode* node = head_;
-
-	while (node)
-	{
-		// Trick to return the elements from tail to head so that the order
-		// is the expected. It's like a push_front().
-		array.insert(array.begin(), node->value_);
-		node = node->next_;
-	}
-
-	return array;
 }
