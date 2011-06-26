@@ -1,120 +1,129 @@
 class SinglyLinkedList:
-    class Node:
-        def __init__(self, value=None):
-            self.value = value
-            self.next = None    
+    _current = 1
+    # TODO give arbitrary values to initialize the list
+    def __init__(self, value=None):
+        self._value = value
+        self._next = None
         
-
-    def __init__(self):
-        self.list = None 
-    
     def __str__(self):
-        values = self.values()
-        return ", ".join(map(str, values))
-            
-    def add(self, value):
-        """Adds `value` to the list."""
-        if self.list:
-            node = self.list
-            while node.next:
-                node = node.next
-            node.next = self.Node(value)    
+        return ', '.join(map(str, self))
+        
+    def __iter__(self):
+        return self
+        
+    def next(self):
+        elem = self.elem(SinglyLinkedList._current)
+        if elem:
+            SinglyLinkedList._current += 1
+            return elem     
         else:
-            self.list = self.Node(value)
-
+            SinglyLinkedList._current = 1
+            raise StopIteration
+            
+    def elem(self, index):
+        """Returns the value at `index` if exists. If not returns None."""
+        if index == 1:
+            return self._value
+        elif self._next and index > 0:
+            return self._next.elem(index - 1)
+        else:
+            return None
+    
+    def add(self, value):
+        """Add `value` to the bottom of the list."""
+        if self._next:
+            self._next.add(value)
+        elif self._value:
+            self._next = SinglyLinkedList(value)
+        else:
+            self._value = value
+            
     def delete(self, value):
-        """Deletes all occurences of `value` from the list."""
-        values = self.values()
-        self.list = None
-        for v in filter(lambda v: v != value, values):
-            self.add(v)
-
+        """Delete all occurrences of `value` from the list."""
+        new_values = filter(lambda x: x != value, self)
+        self._value = self._next = None
+        for elem in new_values:
+            self.add(elem)
+        
     def find(self, value):
-        """
-        If `value` is in the list, returns the first
-        Node object that has that value.
-        In other case returns None.
-        """
-        node = self.list
-        while node:
-            if node.value == value:
-                return node
-            node = node.next
-        return node 
+        """Returns the node with `value`, if any. If not returns None."""
+        if self._value == value:
+            return self
+        elif self._next:
+            self._next.find(value)
+        else:
+            return None
         
     def length(self):
-        """Returns the length of the list."""
-        return len(self.values())
+        """Length of the list."""
+        return sum(map(lambda x:1, self))
             
     def values(self):
         """Returns a Python list."""
-        list = []
-        node = self.list
-        while node:
-            list.append(node.value)
-            node = node.next
-        return list
+        return list(self)
+
 
 class DoublyLinkedList:
-    class Node:
-        def __init__(self, value, prev=None):
-            self.value = value
-            self.prev = prev
-            self.next = None
-    
-    def __init__(self):
-        self.list = None
-    
+    _current = 1
+    # TODO give arbitrary values to initialize the list
+    def __init__(self, value=None, prev=None):
+        self._value = value
+        self._prev = prev
+        self._next = None
+        
     def __str__(self):
-        values = self.values()
-        return ", ".join(map(str, values))
-
-    def add(self, value):
-        """Adds `value` to the list."""
-        if self.list:
-            node = self.list
-            while node.next:
-                node = node.next
-            node.next = self.Node(value, node)
+        return ', '.join(map(str, self))
+        
+    def __iter__(self):
+        return self
+        
+    def next(self):
+        elem = self.elem(DoublyLinkedList._current)
+        if elem:
+            DoublyLinkedList._current += 1
+            return elem     
         else:
-            self.list = self.Node(value)
-
+            DoublyLinkedList._current = 1
+            raise StopIteration
+            
+    def elem(self, index):
+        """Returns the value at `index` if exists. If not returns None."""
+        if index == 1:
+            return self._value
+        elif self._next and index > 0:
+            return self._next.elem(index - 1)
+        else:
+            return None
+    
+    def add(self, value):
+        """Add `value` to the bottom of the list."""
+        if self._next:
+            self._next.add(value)
+        elif self._value:
+            self._next = DoublyLinkedList(value, self)
+        else:
+            self._value = value
+            
     def delete(self, value):
-        """Deletes all occurrences of `value` from the list."""
-        values = self.values()
-        self.list = None
-        for v in filter(lambda v: v != value, values):
-            self.add(v)
-
+        """Delete all occurrences of `value` from the list."""
+        new_values = filter(lambda x: x != value, self)
+        self._value = self._next = None
+        for elem in new_values:
+            self.add(elem)
+        
     def find(self, value):
-        """
-        If `value` is in the list, returns the first
-        Node object that has that value.
-        In other case returns None.
-        """
-        node = self.list
-        while node:
-            if node.value == value:
-                return node
-            node = node.next
-        return node
-
+        """Returns the node with `value`, if any. If not returns None."""
+        if self._value == value:
+            return self
+        elif self._next:
+            self._next.find(value)
+        else:
+            return None
+        
     def length(self):
-        """Returns the length of the list."""
-        return len(self.values())   
-
+        """Length of the list."""
+        return sum(map(lambda x:1, self))
+            
     def values(self):
         """Returns a Python list."""
-        list = []
-        node = self.list
-        while node:
-            list.append(node.value)
-            node = node.next
-        return list
-
-
-if __name__ == "__main__":
-    list = SinglyLinkedList()
-    list.add(1)
-    list.add(2) 
-    print list
+        return list(self)
