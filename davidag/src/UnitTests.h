@@ -11,9 +11,10 @@
 #include <cassert>
 #include <vector>
 #include <algorithm>
+#include "Lists/DoublyLinkedList.h"
 
 template <typename LIST>
-bool list_unit_test()
+bool generic_list_unit_test()
 {
 	{
 		LIST list;
@@ -69,6 +70,41 @@ bool list_unit_test()
 
 		assert(std::vector<std::string>() == list.values());
 	}
+
+	return true;
+}
+
+bool doubly_linked_list_test()
+{
+	DoublyLinkedList dl_list;
+
+	dl_list.add("Peter");
+	dl_list.add("Jakob");
+	dl_list.add("Carol");
+
+	DoublyLinkedNode* peter = dl_list.find("Peter");
+	DoublyLinkedNode* jakob = dl_list.find("Jakob");
+	DoublyLinkedNode* carol = dl_list.find("Carol");
+
+	assert(carol->prev_ == 0);
+	assert(carol->next_ == jakob && jakob->prev_ == carol);
+	assert(jakob->next_ == peter && peter->prev_ == jakob);
+
+	dl_list.add("Richard");
+
+	DoublyLinkedNode* richard = dl_list.find("Richard");
+
+	assert(richard->next_ == carol && carol->prev_ == richard);
+
+	dl_list.remove(jakob);
+
+	assert(richard->next_ == carol && carol->prev_ == richard);
+	assert(carol->next_ == peter && peter->prev_ == carol);
+
+	dl_list.remove(richard);
+
+	assert(carol->next_ == peter && carol->prev_ == 0);
+	assert(peter->prev_ == carol);
 
 	return true;
 }
