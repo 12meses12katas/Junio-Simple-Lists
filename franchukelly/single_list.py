@@ -21,7 +21,17 @@ class SingleList (List):
         """
         Adds a new value at the end of the list.
         """
-        pass
+        node = Node (value)
+
+        # Empty list
+        if not self.first_node:
+            self.first_node = node
+
+        else:
+            self.last_node.next = node
+
+        # Add node at the end of the list
+        self.last_node = node
 
     def find (self, value):
         """
