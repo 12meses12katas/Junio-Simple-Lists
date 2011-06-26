@@ -1,33 +1,21 @@
 # -*- coding: utf-8 -*-
 
 """
-List TDD kata.
+Single list implementation.
 """
 
+from list import List, Node
 
-class Node (object):
+
+class SingleList (List):
     """
-    A list's node.
-    """
-
-    def __init__ (self, value):
-        """
-        Creates a new list's node.
-        """
-        self.value = value
-        self.next_node = None
-
-
-class List (object):
-    """
-    List interface that must be implemented.
+    A single list implementation.
+    Each node must have only a reference to the next one.
     """
 
     def __init__ (self):
-        """
-        Creates an empty list.
-        """
-        self.first_node = None
+        super (SingleList, self).__init__ ()
+        self.last_node = None
 
     def add (self, value):
         """
