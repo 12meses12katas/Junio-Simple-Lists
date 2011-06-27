@@ -46,6 +46,8 @@ class TestSingleList (unittest.TestCase):
         self.list.add ('first value')
         self.list.add ('second value')
         self.list.add ('third value')
+
+        self.assertTrue (self.list.find ('testing') is None)
         self.assertEquals (self.list.find ('first value').value, 'first value')
         self.assertEquals (self.list.find ('second value').value,
                            'second value')

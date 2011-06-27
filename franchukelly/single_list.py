@@ -28,16 +28,21 @@ class SingleList (List):
             self.first_node = node
 
         else:
-            self.last_node.next = node
+            self.last_node.next_node = node
 
         # Add node at the end of the list
         self.last_node = node
 
     def find (self, value):
         """
-        Finds a value into the list.
+        Finds a value into the list, it returns the node that contains the
+        given value.
         """
-        pass
+        node = self.first_node
+        while (node and node.value != value):
+            node = node.next_node
+
+        return node
 
     def delete (self, value):
         """
