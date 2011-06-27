@@ -76,6 +76,24 @@ class TestSingleList (unittest.TestCase):
         self.assertTrue (self.list.first_node is None)
         self.assertTrue (self.list.last_node is None)
 
+    def test_get_values (self):
+        """
+        Tests values method behaviour.
+        """
+        self.assertEquals (self.list.values (), [])
+
+        self.list.add ('first value')
+        self.assertEquals (self.list.values (), ['first value'])
+
+        self.list.add ('second value')
+        self.assertEquals (self.list.values (), ['first value', 'second value'])
+
+        self.list.delete ('second value')
+        self.assertEquals (self.list.values (), ['first value'])
+
+        self.list.delete ('first value')
+        self.assertEquals (self.list.values (), [])
+
 
 if __name__ == '__main__':
     unittest.main ()
