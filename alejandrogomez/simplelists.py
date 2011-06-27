@@ -1,6 +1,6 @@
 class SinglyLinkedList:
     _current = 1
-    # TODO give arbitrary values to initialize the list
+
     def __init__(self, value=None):
         self._value = value
         self._next = None
