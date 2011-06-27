@@ -35,6 +35,23 @@ class TestSingleList (unittest.TestCase):
         self.assertFalse (self.list.last_node is None)
         self.assertEquals (self.list.last_node.value, 'second value')
 
+    def test_find_values (self):
+        """
+        Tests find method behaviour.
+        Values can be searched using find method, if a value is not found the
+        None value is returned.
+        """
+        self.assertTrue (self.list.find ('testing') is None)
+
+        self.list.add ('first value')
+        self.list.add ('second value')
+        self.list.add ('third value')
+        self.assertEquals (self.list.find ('first value').value, 'first value')
+        self.assertEquals (self.list.find ('second value').value,
+                           'second value')
+        self.assertEquals (self.list.find ('third value').value, 'third value')
+
+
 
 if __name__ == '__main__':
     unittest.main ()
