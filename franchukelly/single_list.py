@@ -46,7 +46,7 @@ class SingleList (List):
 
     def delete (self, value):
         """
-        Deletes a value from the list.
+        Deletes the node that contains the given value from the list.
         """
         pass
 

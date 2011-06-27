@@ -53,6 +53,28 @@ class TestSingleList (unittest.TestCase):
                            'second value')
         self.assertEquals (self.list.find ('third value').value, 'third value')
 
+    def test_delete_values (self):
+        """
+        Tests delete method behaviour.
+        The list must not have empty nodes when a value is deleted.
+        """
+        self.list.add ('first value')
+        self.list.add ('second value')
+        self.list.add ('third value')
+
+        self.list.delete ('second value')
+        self.assertEquals (self.list.first_node.value, 'first value')
+        self.assertEquals (self.list.last_node.value, 'third value')
+        self.assertEquals (self.list.first_node.next_node.value, 'third value')
+
+        self.list.delete ('third value')
+        self.assertEquals (self.list.first_node.value, 'first value')
+        self.assertEquals (self.list.last_node.value, 'first value')
+        self.assertTrue (self.list.first_node.next_node is None)
+
+        self.list.delete ('first value')
+        self.assertTrue (self.list.first_node is None)
+        self.assertTrue (self.list.last_node is None)
 
 
 if __name__ == '__main__':
