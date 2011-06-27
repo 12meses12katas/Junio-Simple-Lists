@@ -48,7 +48,27 @@ class SingleList (List):
         """
         Deletes the node that contains the given value from the list.
         """
-        pass
+        prev = self.first_node
+
+        # Delete first node
+        if prev and prev.value == value:
+            self.first_node = prev.next_node
+
+            if self.last_node == prev:
+                self.last_node = None
+
+        else:
+            next = prev.next_node
+            while (next and next.value != value):
+                prev = next
+                next = next.next_node
+
+            if next:
+                prev.next_node = next.next_node
+                next.next_node = None
+
+                if self.last_node == next:
+                    self.last_node = prev
 
     def values (self):
         """
