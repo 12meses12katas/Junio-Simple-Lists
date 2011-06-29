@@ -49,7 +49,27 @@ class DoubleList (List):
         """
         Deletes the node that contains the given value from the list.
         """
-        pass
+        node = self.find (value)
+
+        # Delete first node
+        if self.first_node == node:
+            self.first_node = node.next_node
+            if node.next_node:
+                node.next_node.prev_node = None
+
+        else:
+            prev = node.prev_node
+            prev.next_node = node.next_node
+            if node.next_node:
+                node.next_node.prev_node = prev
+            
+
+        # Delete last node
+        if self.last_node == node:
+            self.last_node = node.prev_node
+
+        node.prev_node = None
+        node.next_node = None
 
     def values (self):
         """
@@ -57,3 +77,4 @@ class DoubleList (List):
         values from the list.
         """
         pass
+
