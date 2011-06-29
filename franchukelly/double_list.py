@@ -76,5 +76,11 @@ class DoubleList (List):
         Returns an array (in this case it's a Python's list) with all the
         values from the list.
         """
-        pass
+        values_list = []
+        node = self.first_node
+        while node:
+            values_list.append (node.value)
+            node = node.next_node
+
+        return values_list
 
