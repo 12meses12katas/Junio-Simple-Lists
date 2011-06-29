@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-Single list implementation.
+Single linked list implementation.
 """
 
 from list import List, Node
@@ -9,7 +9,7 @@ from list import List, Node
 
 class SingleList (List):
     """
-    A single list implementation.
+    A single linked list implementation.
     Each node must have only a reference to the next one.
     """
 

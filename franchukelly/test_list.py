@@ -3,15 +3,13 @@
 import unittest
 
 from single_list import SingleList
+from double_list import DoubleList
 
 
-class TestSingleList (unittest.TestCase):
+class TestList (object):
     """
-    Unit tests for single list implementation.
+    Unit tests for list interface.
     """
-
-    def setUp (self):
-        self.list = SingleList ()
 
     def test_add_values (self):
         """
@@ -93,6 +91,24 @@ class TestSingleList (unittest.TestCase):
 
         self.list.delete ('first value')
         self.assertEquals (self.list.values (), [])
+
+
+class TestSingleList (unittest.TestCase, TestList):
+    """
+    Unit tests for single linked list implementation.
+    """
+
+    def setUp (self):
+        self.list = SingleList ()
+
+
+class TestDoubleleList (unittest.TestCase, TestList):
+    """
+    Unit tests for double linked list implementation.
+    """
+
+    def setUp (self):
+        self.list = DoubleList ()
 
 
 if __name__ == '__main__':
