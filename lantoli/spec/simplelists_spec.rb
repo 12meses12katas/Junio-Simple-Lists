@@ -21,4 +21,12 @@ describe SingleLinkedList do
 
   end
 
+  it "should find the 2 elements if added to the list" do
+    subject.add("fred")
+    subject.add("wilma")
+    subject.find("fred").value.should eq("fred")
+    subject.find("wilma").value.should eq("wilma")
+    subject.values.should eq(["fred", "wilma"])
+  end
+
 end
