@@ -1,0 +1,40 @@
+# List TDD kata
+
+This is a TDD (Test Driven Development) kata from 12meses12katas.
+
+You must develop three implementations of a list with a basic interface:
+
+  * The list consists of nodes. Each node has a string value, along with
+    whatever housekeeping the list itself needs.
+  * New nodes are added to the end of the list.
+  * You can ask the list if it contains a given string. If it does, it returns
+    the node containing that string.
+  * You can delete a node from the list.
+  * You can ask the list to return an array of all its values.
+
+The implementations are:
+
+  * A singly linked list (each node has a reference to the next node).
+  * A doubly linked list (each node has a reference to both the next and
+    previous nodes).
+  * Some other implementation of your choosing, except that it should use no
+    references (pointers) to collect nodes together in the list.
+
+Obviously, we won’t be using predefined library classes as our list
+implementations.
+
+## Using Git to save TDD history
+
+I'm using Git to save my TDD history, here are some techniques that I'm using:
+
+  * My development is in a branch named 'develop'.
+  * In master there are only 'final' versions of my development.
+
+So everybody can follow my workflow, here is a short explanation:
+
+  1. Add a new test, I'm pretty sure that my code won't pass this test.
+  2. Commit my changes.
+  3. Refactor my code to pass this new test.
+  4. Also, my new code must pass all previous tests.
+  5. Commit my changes, and back to #1.
+
