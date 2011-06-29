@@ -29,4 +29,27 @@ describe SingleLinkedList do
     subject.values.should eq(["fred", "wilma"])
   end
 
+  it "should find the 4 elements if added to the list" do
+    subject.add("fred")
+    subject.add("wilma")
+    subject.add("betty")
+    subject.add("barney")
+    subject.values.should eq(["fred", "wilma", "betty", "barney"])
+  end
+
+  it "deleting elements should make them go out from the list" do
+    subject.add("fred")
+    subject.add("wilma")
+    subject.add("betty")
+    subject.add("barney")
+    subject.delete(subject.find("wilma"))
+    subject.values.should eq(["fred", "betty", "barney"])
+    subject.delete(subject.find("barney"))
+    subject.values.should eq(["fred", "betty"])
+    subject.delete(subject.find("fred"))
+    subject.values.should eq(["betty"])
+    subject.delete(subject.find("betty"))
+    subject.values.should eq([])
+  end
+
 end

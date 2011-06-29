@@ -1,4 +1,6 @@
 
+
+
 class SingleLinkedList
 
   def initialize
@@ -22,20 +24,36 @@ class SingleLinkedList
   def find(value)
     nodes.find { |node| node.value == value }
   end
- 
+
+  def values
+     nodes.map { |node| node.value }
+   end
+
+
   def add(value)
-    if @first_node.nil?
-      @first_node = Node.new value
+    new_node = Node.new value
+    last_node = nodes.reverse_each.first
+    if last_node.nil?
+      @first_node = new_node
     else
-      node = Node.new value
-      @first_node.next_node = node
+      last_node.next_node = new_node
     end
   end
-
-  def values()
-    nodes.map { |node| node.value }
+ 
+  def delete(node)
+    each_node.inject(nil) do |prev, current|
+      if current == node
+        if prev.nil?
+          @first_node = current.next_node
+        else
+          prev.next_node = current.next_node
+          return
+        end
+      end
+      current
+    end
   end
-
+   
   class Node
 
     attr_reader :value
@@ -46,6 +64,9 @@ class SingleLinkedList
     end
     
   end
+
+
+
 
 end
 
