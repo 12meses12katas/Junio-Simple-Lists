@@ -21,7 +21,18 @@ class DoubleList (List):
         """
         Adds a new value at the end of the list.
         """
-        pass
+        node = Node (value)
+
+        # Empty list
+        if not self.first_node:
+            self.first_node = node
+
+        else:
+            self.last_node.next_node = node
+
+        # Add node at the end of the list
+        node.prev_node = self.last_node
+        self.last_node = node
 
     def find (self, value):
         """
