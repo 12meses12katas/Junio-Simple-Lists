@@ -5,10 +5,24 @@ class SingleLinkedList
     @first_node = nil
   end
 
-  def find(value)
-    find_in_node_recursive @first_node, value
+  def each_node
+    if block_given? 
+      node = @first_node
+      while not node.nil?
+        yield node
+        node = node.next_node
+      end
+    else
+      self.to_enum :each_node
+    end
   end
 
+  alias nodes each_node
+  
+  def find(value)
+    nodes.find { |node| node.value == value }
+  end
+ 
   def add(value)
     if @first_node.nil?
       @first_node = Node.new value
@@ -19,21 +33,7 @@ class SingleLinkedList
   end
 
   def values()
-    node = @first_node
-    list = []
-    while not node.nil?
-      list << node.value
-      node = node.next_node
-    end
-    list
-  end
-
-  private
-
-  def find_in_node_recursive(node, value)
-    return nil if node.nil?
-    return find_in_node_recursive(node.next_node, value) if node.value != value
-    node
+    nodes.map { |node| node.value }
   end
 
   class Node
