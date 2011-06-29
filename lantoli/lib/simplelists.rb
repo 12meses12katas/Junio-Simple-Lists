@@ -1,11 +1,4 @@
-
-
-
 class SingleLinkedList
-
-  def initialize
-    @first_node = nil
-  end
 
   def each_node
     if block_given? 
@@ -18,42 +11,39 @@ class SingleLinkedList
       self.to_enum :each_node
     end
   end
-
-  alias nodes each_node
   
   def find(value)
-    nodes.find { |node| node.value == value }
+    each_node.find { |node| node.value == value }
   end
 
   def values
-     nodes.map { |node| node.value }
+     each_node.map { |node| node.value }
    end
 
-
   def add(value)
-    new_node = Node.new value
-    last_node = nodes.reverse_each.first
-    if last_node.nil?
-      @first_node = new_node
-    else
-      last_node.next_node = new_node
-    end
+    assign_next_node(last_node, Node.new(value))
   end
  
   def delete(node)
     each_node.inject(nil) do |prev, current|
-      if current == node
-        if prev.nil?
-          @first_node = current.next_node
-        else
-          prev.next_node = current.next_node
-          return
-        end
-      end
+      return assign_next_node(prev, current.next_node) if current == node
       current
     end
   end
-   
+
+  def last_node
+    each_node.reverse_each.first
+  end
+
+  def assign_next_node(node, next_node)
+     if node.nil?
+       @first_node = next_node
+     else
+       node.next_node = next_node
+     end
+   end
+
+  
   class Node
 
     attr_reader :value
@@ -64,9 +54,6 @@ class SingleLinkedList
     end
     
   end
-
-
-
 
 end
 
