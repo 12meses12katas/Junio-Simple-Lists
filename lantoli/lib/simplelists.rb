@@ -6,6 +6,7 @@ class SingleLinkedList
   end
 
   def find(value)
+   return nil if @first_node.nil? || @first_node.value != value
    @first_node
   end
 
@@ -16,13 +17,12 @@ class SingleLinkedList
 
   class Node
 
+    attr_reader :value
+
     def initialize(value)
       @value = value
     end
 
-    def value
-      @value
-    end
   end
 
 end
