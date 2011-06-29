@@ -39,7 +39,11 @@ class DoubleList (List):
         Finds a value into the list, it returns the node that contains the
         given value.
         """
-        pass
+        node = self.first_node
+        while (node and node.value != value):
+            node = node.next_node
+
+        return node
 
     def delete (self, value):
         """
