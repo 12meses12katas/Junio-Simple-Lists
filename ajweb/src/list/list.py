@@ -24,9 +24,13 @@ class ListNode():
         else: self.next = None
         return self
         
-    def prev(self, node=None):
-        if node is not None: self.prev = node 
+    def getPrevious(self):
         return self.prev
+    
+    def setPrevious(self, node):
+        if node.value(): self.prev = node
+        else: self.prev = None
+        return self
     
     def __nonzero__(self):
         return False if self.val==None else True
@@ -35,10 +39,10 @@ class ListNode():
 class List(object):
     '''
     list object. holds methods to work on the list and keeps track of the items (nodes)
+    Only keeps a one reference, to the first item on the list
     '''
 
     def __init__(self, item=None):
-        #self.items = []
         self.first = ListNode()
         if item: self.add(item)
         
@@ -50,6 +54,7 @@ class List(object):
             if self.isEmpty():
                 self.first = newNode
             else:
+                newNode.setPrevious(self.getLast())
                 self.getLast().setNext(newNode)
         return self
     
@@ -85,9 +90,11 @@ class List(object):
             item=item.getNext()
         return None
     
-    def __findLinked(self, node):
+    def __findLinkedUp(self, node):
         """
-        finds a node that has the passed node as next (link)
+            finds a node that has the node passed as arg as next (link)
+            todo: this should need no loop: just get the item previous
+                  to the current one
         """
         item=self.first
         while item and item.getNext():
@@ -95,16 +102,35 @@ class List(object):
             item = item.getNext()
         return None   
     
+    def __findLinkedDown(self, node):
+        """ finds a node that has the passed node as prev link 
+            todo: just get the next node? Is it really possible to have a 
+                  link to the current node in a place on the chain
+                  that is not the next or previous nodes?
+        """
+        item = self.getLast()
+        while item and item.getPrevious():
+            if item.getPrevious().value() == node.value(): return item
+            item = item.getPrevious()
+        return None
+    
     def delete(self, value):
         item = self.first
         while item :
             if item.value()==value:
-                # we have: --prev--item--next
-                # we want: --prev--next
-                prev = self.__findLinked(item)
+                # we have: --1--2--3
+                # we want: --1--3--4
+                prev = self.__findLinkedUp(item)
+                next = self.__findLinkedDown(item)
                 if prev: prev.setNext( item.getNext() or ListNode() )
+                if next: next.setPrevious( item.getPrevious() or ListNode() )
                 if self.first==item: self.first=self.first.getNext() or ListNode()
                 del(item)
                 return self
             item=item.getNext()
         return self
+
+    
+    
+        
+        
