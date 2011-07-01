@@ -1,20 +1,20 @@
 # -*- coding: utf-8 -*-
 
 """
-Single linked list implementation.
+Double linked list implementation.
 """
 
 from list import List, Node
 
 
-class SingleList (List):
+class DoubleList (List):
     """
-    A single linked list implementation.
-    Each node must have only a reference to the next one.
+    A double linked list implementation.
+    Each node must have a reference to the next and the previous one.
     """
 
     def __init__ (self):
-        super (SingleList, self).__init__ ()
+        super (DoubleList, self).__init__ ()
         self.last_node = None
 
     def add (self, value):
@@ -31,6 +31,7 @@ class SingleList (List):
             self.last_node.next_node = node
 
         # Add node at the end of the list
+        node.prev_node = self.last_node
         self.last_node = node
 
     def find (self, value):
@@ -48,27 +49,27 @@ class SingleList (List):
         """
         Deletes the node that contains the given value from the list.
         """
-        prev = self.first_node
+        node = self.find (value)
 
         # Delete first node
-        if prev and prev.value == value:
-            self.first_node = prev.next_node
-
-            if self.last_node == prev:
-                self.last_node = None
+        if self.first_node == node:
+            self.first_node = node.next_node
+            if node.next_node:
+                node.next_node.prev_node = None
 
         else:
-            next = prev.next_node
-            while (next and next.value != value):
-                prev = next
-                next = next.next_node
+            prev = node.prev_node
+            prev.next_node = node.next_node
+            if node.next_node:
+                node.next_node.prev_node = prev
+            
 
-            if next:
-                prev.next_node = next.next_node
-                next.next_node = None
+        # Delete last node
+        if self.last_node == node:
+            self.last_node = node.prev_node
 
-                if self.last_node == next:
-                    self.last_node = prev
+        node.prev_node = None
+        node.next_node = None
 
     def values (self):
         """
