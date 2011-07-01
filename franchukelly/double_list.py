@@ -15,7 +15,6 @@ class DoubleList (List):
 
     def __init__ (self):
         super (DoubleList, self).__init__ ()
-        self.last_node = None
 
     def add (self, value):
         """
@@ -70,17 +69,4 @@ class DoubleList (List):
 
         node.prev_node = None
         node.next_node = None
-
-    def values (self):
-        """
-        Returns an array (in this case it's a Python's list) with all the
-        values from the list.
-        """
-        values_list = []
-        node = self.first_node
-        while node:
-            values_list.append (node.value)
-            node = node.next_node
-
-        return values_list
 
