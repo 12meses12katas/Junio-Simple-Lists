@@ -15,7 +15,6 @@ class SingleList (List):
 
     def __init__ (self):
         super (SingleList, self).__init__ ()
-        self.last_node = None
 
     def add (self, value):
         """
@@ -69,17 +68,4 @@ class SingleList (List):
 
                 if self.last_node == next:
                     self.last_node = prev
-
-    def values (self):
-        """
-        Returns an array (in this case it's a Python's list) with all the
-        values from the list.
-        """
-        values_list = []
-        node = self.first_node
-        while node:
-            values_list.append (node.value)
-            node = node.next_node
-
-        return values_list
 

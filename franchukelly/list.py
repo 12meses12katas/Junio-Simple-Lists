@@ -20,7 +20,7 @@ class Node (object):
 
 class List (object):
     """
-    List interface that must be implemented.
+    Abstract class for list implementations.
     """
 
     def __init__ (self):
@@ -28,6 +28,7 @@ class List (object):
         Creates an empty list.
         """
         self.first_node = None
+        self.last_node = None
 
     def add (self, value):
         """
@@ -52,5 +53,11 @@ class List (object):
         Returns an array (in this case it's a Python's list) with all the
         values from the list.
         """
-        pass
+        values_list = []
+        node = self.first_node
+        while node:
+            values_list.append (node.value)
+            node = node.next_node
+
+        return values_list
 
